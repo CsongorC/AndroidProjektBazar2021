@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_list.xml" value="0.12360688956433637" />
+        <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_login.xml" value="0.12360688956433637" />
+        <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/item_layout.xml" value="0.12360688956433637" />
       </map>
     </option>
   </component>
