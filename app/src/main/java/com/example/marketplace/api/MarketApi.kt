@@ -1,13 +1,8 @@
 package com.example.marketplace.api
 
-import com.example.marketplace.model.LoginRequest
-import com.example.marketplace.model.LoginResponse
-import com.example.marketplace.model.ProductResponse
+import com.example.marketplace.model.*
 import com.example.marketplace.utils.Constants
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface MarketApi {
     @POST(Constants.LOGIN_URL)
@@ -15,4 +10,10 @@ interface MarketApi {
 
     @GET(Constants.GET_PRODUCT_URL)
     suspend fun getProducts(@Header("token") token: String): ProductResponse
+
+    @Multipart
+    @POST(Constants.REGISTER_URL)
+    suspend fun register(@Part("username") username: String,
+                         @Part("password") password: String,
+                         @Part("email") email: String) : RegisterResponse
 }
