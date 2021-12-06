@@ -11,9 +11,6 @@ interface MarketApi {
     @GET(Constants.GET_PRODUCT_URL)
     suspend fun getProducts(@Header("token") token: String): ProductResponse
 
-    @Multipart
     @POST(Constants.REGISTER_URL)
-    suspend fun register(@Part("username") username: String,
-                         @Part("password") password: String,
-                         @Part("email") email: String) : RegisterResponse
+    suspend fun register(@Body request: RegisterRequest) : RegisterResponse
 }

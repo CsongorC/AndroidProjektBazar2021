@@ -37,8 +37,8 @@ class RegisterFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_register, container, false)
         val logIn: TextView = view.findViewById(R.id.textView_login_fragment_log_in)
-        val fullName: EditText = view.findViewById(R.id.full_name)
-        val lastName: EditText = view.findViewById(R.id.last_name)
+        val userName: EditText = view.findViewById(R.id.user_name)
+        val phoneNumber: EditText = view.findViewById(R.id.phone_number)
         val email: EditText = view.findViewById(R.id.email)
         val password: EditText = view.findViewById(R.id.password)
         val register : Button = view.findViewById(R.id.button_register_fragment_register)
@@ -48,7 +48,7 @@ class RegisterFragment : Fragment() {
         register.setOnClickListener {
             registerViewModel.user.value.let {
                 if (it != null) {
-                    it.username = lastName.text.toString()
+                    it.username = userName.text.toString()
                 }
                 if (it != null) {
                     it.password = password.text.toString()
@@ -57,7 +57,7 @@ class RegisterFragment : Fragment() {
                     it.email = email.text.toString()
                 }
                 if (it != null) {
-                    it.password = password.text.toString()
+                    it.phone_number = phoneNumber.text.toString()
                 }
             }
 

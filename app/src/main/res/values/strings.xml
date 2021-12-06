@@ -9,4 +9,11 @@
     <string name="password">Password</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="log_in">Log in</string>
+    <string name="timeline">Timeline</string>
+    <string name="my_market">My market</string>
+    <string name="my_fares">My fares</string>
+    <string name="order_now">Order now</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+    <string name="profile">Profile</string>
 </resources>

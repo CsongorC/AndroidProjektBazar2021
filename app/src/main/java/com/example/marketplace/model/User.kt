@@ -4,7 +4,7 @@ import com.squareup.moshi.JsonClass
 
 //import com.google.gson.annotations.SerializedName
 
-data class User(var username: String="", var password: String="", var email: String="", var phone_number: String="")
+data class User(var username: String= "", var password: String="", var email: String="", var phone_number: String="")
 
 @JsonClass(generateAdapter = true)
 data class LoginRequest (
@@ -26,7 +26,8 @@ data class LoginResponse (
 data class RegisterRequest (
     var username: String,
     var password: String,
-    var email: String
+    var email: String,
+    var phone_number: Int
 )
 
 @JsonClass(generateAdapter = true)

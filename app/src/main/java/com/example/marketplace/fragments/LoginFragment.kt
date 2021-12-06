@@ -10,12 +10,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.marketplace.R
 import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.LoginViewModelFactory
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
 
@@ -60,7 +62,10 @@ class LoginFragment : Fragment() {
 
             }
             loginViewModel.token.observe(viewLifecycleOwner){
+                val navBar: BottomNavigationView = requireActivity().findViewById(R.id.bottom_navigation)
+                navBar.visibility = View.VISIBLE
                 findNavController().navigate(R.id.action_loginFragment_to_listFragment)
+                //findNavController().navigate(R.id.action_loginFragment_to_mainScreenFragment)
             }
         }
         return view

@@ -1,25 +1,33 @@
 package com.example.marketplace.adapters
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.marketplace.R
 import com.example.marketplace.model.Product
 
 class DataAdapter(
     private var list: ArrayList<Product>,
+    var listFiltered: ArrayList<Product>,
+    private val context: Context,
     private val listener: OnItemClickListener,
     private val listener2: OnItemLongClickListener
 ) :
-    RecyclerView.Adapter<DataAdapter.DataViewHolder>() {
+    RecyclerView.Adapter<DataAdapter.DataViewHolder>(), Filterable {
 
-    interface OnItemClickListener{
+    interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
 
-    interface OnItemLongClickListener{
+    interface OnItemLongClickListener {
         fun onItemLongClick(position: Int)
     }
 
@@ -28,11 +36,14 @@ class DataAdapter(
         View.OnClickListener, View.OnLongClickListener {
         val textView_name: TextView = itemView.findViewById(R.id.textView_name_item_layout)
         val textView_price: TextView = itemView.findViewById(R.id.textView_price_item_layout)
+        val textView_seller: TextView = itemView.findViewById(R.id.textView_seller_item_layout)
+        val imageView: ImageView = itemView.findViewById(R.id.imageView_item_layout)
 
-        init{
+        init {
             itemView.setOnClickListener(this)
             itemView.setOnLongClickListener(this)
         }
+
         override fun onClick(p0: View?) {
             val currentPosition = this.adapterPosition
             listener.onItemClick(currentPosition)
@@ -56,15 +67,70 @@ class DataAdapter(
 
     // 3. Called many times, when we scroll the list
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
-        val currentItem = list[position]
+        val currentItem = listFiltered[position]
         holder.textView_name.text = currentItem.title
         holder.textView_price.text = currentItem.price_per_unit
+        holder.textView_seller.text = currentItem.username
+        val images = currentItem.images
+        if (images != null && images.size > 0) {
+            Log.d("xxx", "#num_images: ${images.size}")
+        }
+        Glide.with(this.context)
+            .load(R.drawable.ic_user)
+            .override(200, 200)
+            .into(holder.imageView);
     }
 
-    override fun getItemCount() = list.size
+    override fun getItemCount() = listFiltered.size
 
     // Update the list
-    fun setData(newlist: ArrayList<Product>){
+    fun setData(newlist: ArrayList<Product>) {
         list = newlist
+        listFiltered = list
+        notifyDataSetChanged()
+    }
+
+    fun sortAscending(){
+        listFiltered.sortBy {
+            it.creation_time
+        }
+        notifyDataSetChanged()
+    }
+
+    fun sortDescending(){
+        listFiltered.sortByDescending {
+            it.creation_time
+        }
+        notifyDataSetChanged()
+    }
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charString = constraint?.toString() ?: ""
+                if (charString.isEmpty()) listFiltered = list
+                else {
+                    val filteredList = ArrayList<Product>()
+                    list
+                        .filter {
+                            (it.title.contains(constraint!!)) or (it.description.contains(constraint))
+                        }
+                        .forEach { filteredList.add(it) }
+                    listFiltered = filteredList
+
+                }
+                return FilterResults().apply { values = listFiltered }
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                listFiltered = (if (results?.values == null)
+                    ArrayList()
+                else
+                    results.values as ArrayList<Product>).also { listFiltered = it }
+                notifyDataSetChanged()
+            }
+
+        }
     }
 }
+

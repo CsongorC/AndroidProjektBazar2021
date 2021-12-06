@@ -1,5 +1,6 @@
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -42,6 +43,7 @@ class LoginViewModel(val context: Context, val repository: Repository) : ViewMod
             token.value = result.token
             Log.d("xxx", "MyApplication - token:  ${MyApplication.token}")
         } catch (e: Exception) {
+            Toast.makeText(context, "Can't login to this account!\n" ,Toast.LENGTH_LONG).show()
             Log.d("xxx", "LoginViewModel - exception: ${e.toString()}")
         }
     }

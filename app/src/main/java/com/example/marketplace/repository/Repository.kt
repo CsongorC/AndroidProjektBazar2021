@@ -13,6 +13,6 @@ class Repository {
     }
 
     suspend fun register(request: RegisterRequest): RegisterResponse {
-        return RetrofitInstance.api.register(request.username,request.password,request.email)
+        return RetrofitInstance.api.register(request)
     }
 }

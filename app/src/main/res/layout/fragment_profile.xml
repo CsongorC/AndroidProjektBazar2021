@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/deep_pine_green"
+    tools:context=".fragments.ProfileFragment">
+
+    <ImageView
+        android:layout_width="169dp"
+        android:layout_height="207dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="250dp"
+        android:src="@drawable/ic_baseline_account_circle_24" />
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Csegezi-Balazs Csongor"
+        android:textColor="@color/light_peach"
+        android:layout_marginTop="250dp"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        android:layout_marginStart="95dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Name"
+        android:textColor="@color/deep_pine_green"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/deep_pine_green"
+        android:background="@drawable/edit_text_border"/>
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="410dp"
+            android:layout_marginStart="95dp"
+            android:ems="10"
+            android:hint="Name"
+            android:textColor="@color/deep_pine_green"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/deep_pine_green"
+            android:background="@drawable/edit_text_border"/>
+
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="480dp"
+            android:layout_marginStart="95dp"
+            android:ems="10"
+            android:hint="Name"
+            android:textColor="@color/deep_pine_green"
+            android:inputType="phone"
+            android:textColorHint="@color/deep_pine_green"
+            android:background="@drawable/edit_text_border"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="550dp"
+            android:layout_marginStart="95dp"
+            android:ems="10"
+            android:hint="Name"
+            android:textColor="@color/deep_pine_green"
+            android:inputType="textPassword"
+            android:textColorHint="@color/deep_pine_green"
+            android:background="@drawable/edit_text_border"/>
+
+
+</FrameLayout>
