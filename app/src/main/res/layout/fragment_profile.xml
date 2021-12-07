@@ -8,32 +8,46 @@
     android:background="@color/deep_pine_green"
     tools:context=".fragments.ProfileFragment">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="610dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/light_peach"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
     <ImageView
         android:layout_width="169dp"
         android:layout_height="207dp"
         android:layout_gravity="center"
+        android:layout_marginTop="55dp"
         android:layout_marginBottom="250dp"
-        android:src="@drawable/ic_baseline_account_circle_24" />
+        android:src="@drawable/ic_user" />
 
     <TextView
-        android:layout_width="400dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Csegezi-Balazs Csongor"
-        android:textColor="@color/light_peach"
-        android:layout_marginTop="250dp"
-        android:textSize="30sp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/deep_pine_green"
+        android:layout_marginTop="220dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:layout_marginStart="95dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginStart="45dp"
         android:ems="10"
-        android:gravity="center"
-        android:hint="Name"
+        android:hint="Email"
         android:textColor="@color/deep_pine_green"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/deep_pine_green"
@@ -43,10 +57,10 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="410dp"
-            android:layout_marginStart="95dp"
+            android:layout_marginTop="350dp"
+            android:layout_marginStart="45dp"
             android:ems="10"
-            android:hint="Name"
+            android:hint="Username"
             android:textColor="@color/deep_pine_green"
             android:inputType="textPersonName"
             android:textColorHint="@color/deep_pine_green"
@@ -56,10 +70,10 @@
             android:id="@+id/phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="480dp"
-            android:layout_marginStart="95dp"
+            android:layout_marginTop="420dp"
+            android:layout_marginStart="45dp"
             android:ems="10"
-            android:hint="Name"
+            android:hint="Phone number"
             android:textColor="@color/deep_pine_green"
             android:inputType="phone"
             android:textColorHint="@color/deep_pine_green"
@@ -69,14 +83,31 @@
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="550dp"
-            android:layout_marginStart="95dp"
+            android:layout_marginTop="490dp"
+            android:layout_marginStart="45dp"
             android:ems="10"
-            android:hint="Name"
+            android:hint="Password"
             android:textColor="@color/deep_pine_green"
             android:inputType="textPassword"
             android:textColorHint="@color/deep_pine_green"
             android:background="@drawable/edit_text_border"/>
+
+        <Button
+            android:id="@+id/publish"
+            android:layout_width="192dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="560dp"
+            android:layout_marginStart="55dp"
+            android:backgroundTint="@color/orange"
+            android:text="@string/publish"
+            android:textSize="10dp"
+            android:textColorHint="@color/light_peach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+
+    </androidx.cardview.widget.CardView>
 
 
 </FrameLayout>

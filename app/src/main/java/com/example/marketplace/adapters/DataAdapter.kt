@@ -74,10 +74,14 @@ class DataAdapter(
         val images = currentItem.images
         if (images != null && images.size > 0) {
             Log.d("xxx", "#num_images: ${images.size}")
+            Glide.with(this.context)
+                .load(images[0])
+                .override(50, 50)
+                .into(holder.imageView);
         }
         Glide.with(this.context)
             .load(R.drawable.ic_user)
-            .override(200, 200)
+            .override(50, 50)
             .into(holder.imageView);
     }
 
