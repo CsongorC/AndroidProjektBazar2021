@@ -9,13 +9,16 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.marketplace.R
 import com.example.marketplace.model.Product
+import com.example.marketplace.viewmodels.ProductDataStorage
 
 class DataAdapter(
     private var list: ArrayList<Product>,
+    private var listOfMyProducts: ArrayList<Product>,
     var listFiltered: ArrayList<Product>,
     private val context: Context,
     private val listener: OnItemClickListener,
@@ -47,7 +50,10 @@ class DataAdapter(
         override fun onClick(p0: View?) {
             val currentPosition = this.adapterPosition
             listener.onItemClick(currentPosition)
-
+            if (p0 != null) {
+                ProductDataStorage.productDetail = listFiltered[currentPosition]
+                p0.findNavController().navigate(R.id.action_listFragment_to_detailByCustomerFragment)
+            }
         }
 
         override fun onLongClick(p0: View?): Boolean {
@@ -72,7 +78,7 @@ class DataAdapter(
         holder.textView_price.text = currentItem.price_per_unit
         holder.textView_seller.text = currentItem.username
         val images = currentItem.images
-        if (images != null && images.size > 0) {
+        if (images != null && images.isNotEmpty()) {
             Log.d("xxx", "#num_images: ${images.size}")
             Glide.with(this.context)
                 .load(images[0])
@@ -91,6 +97,11 @@ class DataAdapter(
     fun setData(newlist: ArrayList<Product>) {
         list = newlist
         listFiltered = list
+        for (i in list) {
+            if(i.username == "csongorcs"){
+                listOfMyProducts+=i
+            }
+        }
         notifyDataSetChanged()
     }
 

@@ -8,11 +8,16 @@
     android:background="@color/deep_pine_green"
     tools:context=".fragments.ProfileFragment">
 
+    <include
+        layout="@layout/profile_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
-        android:layout_height="610dp"
+        android:layout_height="565dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="75dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/light_peach"
         app:cardCornerRadius="15dp"
@@ -22,10 +27,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
     <ImageView
-        android:layout_width="169dp"
-        android:layout_height="207dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_gravity="center"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="54dp"
         android:layout_marginBottom="250dp"
         android:src="@drawable/ic_user" />
 
@@ -36,7 +41,7 @@
         android:text="Csegezi-Balazs Csongor"
         android:layout_marginStart="10dp"
         android:textColor="@color/deep_pine_green"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="200dp"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -44,7 +49,7 @@
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="250dp"
         android:layout_marginStart="45dp"
         android:ems="10"
         android:hint="Email"
@@ -57,7 +62,7 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="320dp"
             android:layout_marginStart="45dp"
             android:ems="10"
             android:hint="Username"
@@ -70,7 +75,7 @@
             android:id="@+id/phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="420dp"
+            android:layout_marginTop="390dp"
             android:layout_marginStart="45dp"
             android:ems="10"
             android:hint="Phone number"
@@ -83,7 +88,7 @@
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="490dp"
+            android:layout_marginTop="460dp"
             android:layout_marginStart="45dp"
             android:ems="10"
             android:hint="Password"
@@ -96,7 +101,7 @@
             android:id="@+id/publish"
             android:layout_width="192dp"
             android:layout_height="40dp"
-            android:layout_marginTop="560dp"
+            android:layout_marginTop="515dp"
             android:layout_marginStart="55dp"
             android:backgroundTint="@color/orange"
             android:text="@string/publish"

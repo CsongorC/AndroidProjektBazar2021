@@ -82,7 +82,7 @@ class TimelineFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
     }
 
     private fun setupRecyclerView(){
-        adapter = DataAdapter(ArrayList<Product>(), ArrayList<Product>(), this.requireContext(), this, this)
+        adapter = DataAdapter(ArrayList<Product>(), ArrayList<Product>(),ArrayList<Product>(), this.requireContext(), this, this)
         recycler_view.adapter = adapter
         recycler_view.layoutManager = LinearLayoutManager(this.context)
         recycler_view.addItemDecoration(

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/deep_pine_green"
+    tools:context=".fragments.ProfileFragment">
+
+    <include
+    layout="@layout/details_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="560dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/light_peach"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="169dp"
+            android:layout_height="207dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="250dp"
+            android:src="@drawable/ic_item" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="400dp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Title"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="280dp"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="45"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="340dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/currency"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="RON"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="340dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/separator"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="/"
+            android:layout_marginStart="60dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="340dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount_type"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="L"
+            android:layout_marginStart="80dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="340dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView_item_layout"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="230dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user"
+            />
+
+        <TextView
+            android:id="@+id/seller"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Seller"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="233dp"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/creationTime"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Creation time"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="235dp"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/email"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="490dp"
+            android:layout_marginStart="55dp"
+            android:backgroundTint="@color/deep_grey"
+            android:textSize="10dp"
+            android:textColorHint="@color/light_peach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            android:drawableLeft="@drawable/ic_baseline_mail_24"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number"
+            app:cornerRadius="100dp"/>
+
+        <Button
+            android:id="@+id/order"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="490dp"
+            android:layout_marginStart="125dp"
+            android:backgroundTint="@color/orange"
+            android:textSize="10dp"
+            android:textColorHint="@color/light_peach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:icon="@drawable/ic_baseline_shopping_cart_24"
+            app:iconGravity="start"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number"
+            app:cornerRadius="100dp"/>
+
+        <Button
+            android:id="@+id/call"
+            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="490dp"
+            android:layout_marginStart="195dp"
+            android:backgroundTint="@color/deep_grey"
+            android:textSize="10dp"
+            android:textColorHint="@color/light_peach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            android:drawableLeft="@drawable/ic_baseline_phone_24"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number"
+            app:cornerRadius="100dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

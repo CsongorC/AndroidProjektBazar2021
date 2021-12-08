@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marketplace.MyApplication
+import com.example.marketplace.model.Image
 import com.example.marketplace.model.Product
 import com.example.marketplace.repository.Repository
 import kotlinx.coroutines.launch
