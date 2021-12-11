@@ -9,10 +9,18 @@ class Repository {
     }
 
     suspend fun getProducts(token: String): ProductResponse {
-        return RetrofitInstance.api.getProducts(token,"50")
+        return RetrofitInstance.api.getProducts(token,"100")
     }
 
     suspend fun register(request: RegisterRequest): RegisterResponse {
         return RetrofitInstance.api.register(request)
+    }
+
+    suspend fun getUserInfo(username: String): UserInfoResponse{
+        return RetrofitInstance.api.getUserInfo(username)
+    }
+
+    suspend fun removeProduct(token: String, product_id: String): ProductRemoveResponse{
+        return RetrofitInstance.api.removeProduct(token, product_id)
     }
 }

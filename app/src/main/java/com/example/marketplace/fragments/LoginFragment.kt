@@ -17,6 +17,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.marketplace.R
 import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.LoginViewModelFactory
+import com.example.marketplace.viewmodels.ProductDataStorage
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
@@ -64,6 +65,7 @@ class LoginFragment : Fragment() {
             loginViewModel.token.observe(viewLifecycleOwner){
                 val navBar: BottomNavigationView = requireActivity().findViewById(R.id.bottom_navigation)
                 navBar.visibility = View.VISIBLE
+                ProductDataStorage.username = editText1.text.toString()
                 findNavController().navigate(R.id.action_loginFragment_to_listFragment)
                 //findNavController().navigate(R.id.action_loginFragment_to_mainScreenFragment)
             }

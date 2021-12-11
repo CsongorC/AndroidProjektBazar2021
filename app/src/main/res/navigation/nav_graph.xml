@@ -31,6 +31,12 @@
         <action
             android:id="@+id/action_listFragment_to_detailByCustomerFragment"
             app:destination="@id/detailByCustomerFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_detailByOwnerFragment2"
+            app:destination="@id/detailByOwnerFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_guestProfileFragment"
+            app:destination="@id/guestProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -55,4 +61,36 @@
         android:name="com.example.marketplace.fragments.DetailByCustomerFragment"
         android:label="fragment_detail_by_customer"
         tools:layout="@layout/fragment_detail_by_customer" />
+    <fragment
+        android:id="@+id/myMarketFragment"
+        android:name="com.example.marketplace.fragments.MyMarketFragment"
+        android:label="MyMarketFragment" >
+        <action
+            android:id="@+id/action_myMarketFragment_to_detailByOwnerFragment3"
+            app:destination="@id/detailByOwnerFragment" />
+        <action
+            android:id="@+id/action_myMarketFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailByOwnerFragment"
+        android:name="com.example.marketplace.fragments.DetailByOwnerFragment"
+        android:label="DetailByOwnerFragment" >
+        <action
+            android:id="@+id/action_detailByOwnerFragment_to_myMarketFragment"
+            app:destination="@id/myMarketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myFaresFragment"
+        android:name="com.example.marketplace.fragments.MyFaresFragment"
+        android:label="fragment_my_fares"
+        tools:layout="@layout/fragment_my_fares" />
+    <fragment
+        android:id="@+id/guestProfileFragment"
+        android:name="com.example.marketplace.fragments.GuestProfileFragment"
+        android:label="GuestProfileFragment" >
+        <action
+            android:id="@+id/action_guestProfileFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
 </navigation>

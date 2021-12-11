@@ -44,6 +44,17 @@ data class ActivateResponse (
     var creation_time: Long
 )
 
+@JsonClass(generateAdapter = true)
+data class Data(
+    var username: String,
+    var phone_number: Long,
+    var email: String,
+)
+
+@JsonClass(generateAdapter = true)
+data class UserInfoResponse(val code: Int, val data: List<Data>, val timestamp: Long)
+
+
 
 // GSon converter
 //data class LoginRequest (

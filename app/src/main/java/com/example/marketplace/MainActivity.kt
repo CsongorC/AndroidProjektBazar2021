@@ -41,27 +41,19 @@ class MainActivity : AppCompatActivity() {
 
         navView.visibility = View.GONE
 
-        bottom_navigation.setOnNavigationItemSelectedListener {
+        bottom_navigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.timeline -> {
-                    replaceFragment(timelineFragment)
+                    navController.navigate(R.id.listFragment)
                 }
                 R.id.myMarket -> {
-                    replaceFragment(myMarketFragment)
+                    navController.navigate(R.id.myMarketFragment)
                 }
                 R.id.MyFares ->{
-                    replaceFragment(myFaresFragment)
+                    navController.navigate(R.id.myFaresFragment)
                 }
             }
             true
-        }
-    }
-
-    private fun replaceFragment(fragment : Fragment){
-        if( fragment != null){
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.nav_host_fragment, fragment)
-            transaction.commit()
         }
     }
 

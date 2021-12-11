@@ -7,7 +7,6 @@ import android.widget.Switch
 
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.SearchView
-import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -16,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marketplace.R
 import com.example.marketplace.adapters.DataAdapter
+import com.example.marketplace.adapters.MyProductsAdapter
 import com.example.marketplace.model.Product
 import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.ListViewModel
@@ -26,13 +26,13 @@ class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
     lateinit var listViewModel: ListViewModel
     private lateinit var recycler_view: RecyclerView
     private lateinit var search_layout: SearchView
-    private lateinit var adapter: DataAdapter
+    private lateinit var adapter: MyProductsAdapter
     private lateinit var switchButton : Switch
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val factory = ListViewModelFactory(Repository())
-        listViewModel = ViewModelProvider(this, factory).get(ListViewModel::class.java)
+        listViewModel = ViewModelProvider(this, factory)[ListViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -82,7 +82,7 @@ class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
     }
 
     private fun setupRecyclerView(){
-        adapter = DataAdapter(ArrayList<Product>(), ArrayList<Product>(), ArrayList<Product>(), this.requireContext(), this, this)
+        adapter = MyProductsAdapter(ArrayList<Product>(), ArrayList<Product>(),  this.requireContext(), this, this)
         recycler_view.adapter = adapter
         recycler_view.layoutManager = LinearLayoutManager(this.context)
         recycler_view.addItemDecoration(
@@ -97,7 +97,7 @@ class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        my_toolbar.title = "Timeline"
+        my_toolbar.title = "My market"
         my_toolbar.setOnMenuItemClickListener {
                 menuItem ->
             menuItem.isChecked = true
