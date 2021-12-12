@@ -1,10 +1,13 @@
 package com.example.marketplace.fragments
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -65,10 +68,18 @@ class DetailByOwnerFragment : Fragment() {
 
         deleteItem = view.findViewById(R.id.delete)
         deleteItem.setOnClickListener {
-            lifecycleScope.launch {
-                productViewModel.deleteProduct()
+            val builder = AlertDialog.Builder(context)
+            builder.setTitle("Delete")
+            builder.setMessage("Are you sure you want to remove this item?")
+            builder.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
+                lifecycleScope.launch {
+                    productViewModel.deleteProduct()
+                }
+                findNavController().navigate(R.id.action_detailByOwnerFragment_to_myMarketFragment)
+                Toast.makeText(context, "Successful deletion. ",Toast.LENGTH_SHORT).show()
             }
-            findNavController().navigate(R.id.action_detailByOwnerFragment_to_myMarketFragment)
+            builder.setNegativeButton("No",{ dialogInterface: DialogInterface, i: Int -> })
+            builder.show()
         }
 
         goBack = view.findViewById(R.id.back)

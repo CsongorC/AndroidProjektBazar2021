@@ -17,11 +17,9 @@ class ProductViewModel(private val repository: Repository) : ViewModel() {
     init{
         Log.d("xxx", "ProductViewModel - Token: ${MyApplication.token}")
         Log.d("xxx", "ProductViewModel - product_id: ${ProductDataStorage.my_product_id}")
-        deleteProduct()
     }
 
-    fun deleteProduct() {
-        viewModelScope.launch {
+    suspend fun deleteProduct() {
             try {
                 val result =
                     repository.removeProduct(MyApplication.token, ProductDataStorage.my_product_id)
@@ -32,4 +30,3 @@ class ProductViewModel(private val repository: Repository) : ViewModel() {
             }
         }
     }
-}

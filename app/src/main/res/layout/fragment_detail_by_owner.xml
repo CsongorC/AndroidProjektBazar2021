@@ -49,7 +49,7 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginTop="240dp"
-            android:layout_marginStart="85dp"
+            android:layout_marginStart="80dp"
             android:layout_marginBottom="250dp"
             android:src="@drawable/ic_baseline_delete_24" />
 
@@ -162,55 +162,6 @@
             android:textColor="@color/deep_pine_green"
             android:textSize="15sp"
             android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/email"
-            android:layout_width="55dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="490dp"
-            android:layout_marginStart="55dp"
-            android:backgroundTint="@color/deep_grey"
-            android:textSize="10dp"
-            android:textColorHint="@color/light_peach"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            android:drawableLeft="@drawable/ic_baseline_mail_24"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number"
-            app:cornerRadius="100dp"/>
-
-        <Button
-            android:id="@+id/order"
-            android:layout_width="55dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="490dp"
-            android:layout_marginStart="125dp"
-            android:backgroundTint="@color/orange"
-            android:textSize="10dp"
-            android:textColorHint="@color/light_peach"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:icon="@drawable/ic_baseline_shopping_cart_24"
-            app:iconGravity="start"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number"
-            app:cornerRadius="100dp"/>
-
-        <Button
-            android:id="@+id/call"
-            android:layout_width="55dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="490dp"
-            android:layout_marginStart="195dp"
-            android:backgroundTint="@color/deep_grey"
-            android:textSize="10dp"
-            android:textColorHint="@color/light_peach"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            android:drawableLeft="@drawable/ic_baseline_phone_24"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number"
-            app:cornerRadius="100dp"/>
 
     </androidx.cardview.widget.CardView>
 
