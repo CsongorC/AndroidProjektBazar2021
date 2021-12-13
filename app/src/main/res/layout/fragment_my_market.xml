@@ -11,46 +11,91 @@
         android:id="@+id/my_toolbar"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:elevation="4dp"
         android:layout_marginBottom="600dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:itemIconTint="@drawable/tab_color"
         android:background="@color/deep_grey"
+        android:elevation="4dp"
+        app:itemIconTint="@drawable/tab_color"
         app:itemTextColor="@drawable/tab_color"
-        app:menu="@menu/timeline_action_bar"
-        app:titleTextColor="@color/light_peach"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:menu="@menu/timeline_action_bar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/light_peach" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintVertical_bias="0.0"
         tools:itemCount="10"
         tools:listitem="@layout/item_layout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/orange"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:height="50dp"
+            android:textColor="@color/light_peach"
+            android:textOff="Latest"
+            android:textOn="Oldest"
+            android:textSize="20sp"
+            android:thumb="@drawable/custom_thumb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showText="true"
+            app:track="@drawable/custom_track"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="265dp"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="@color/orange"
+        app:borderWidth="0dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_anchor="@id/recycler_view"
+        app:layout_anchorGravity="bottom|right|start"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:clipToPadding="false"
         app:itemIconTint="@drawable/tab_color"
         app:itemTextColor="@drawable/tab_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        app:menu="@menu/bottom_navigation"
-        android:clipToPadding="false"/>
+        app:menu="@menu/bottom_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -71,6 +71,9 @@
         <action
             android:id="@+id/action_myMarketFragment_to_profileFragment2"
             app:destination="@id/profileFragment2" />
+        <action
+            android:id="@+id/action_myMarketFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailByOwnerFragment"
@@ -92,5 +95,13 @@
         <action
             android:id="@+id/action_guestProfileFragment_to_listFragment"
             app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.example.marketplace.fragments.AddItemFragment"
+        android:label="AddItemFragment" >
+        <action
+            android:id="@+id/action_addItemFragment_to_myMarketFragment"
+            app:destination="@id/myMarketFragment" />
     </fragment>
 </navigation>

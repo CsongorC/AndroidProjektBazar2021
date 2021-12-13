@@ -5,23 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.marketplace.R
 import com.example.marketplace.repository.Repository
-import com.example.marketplace.viewmodels.ListViewModel
-import com.example.marketplace.viewmodels.ListViewModelFactory
-import com.example.marketplace.viewmodels.LoginViewModelFactory
-import com.example.marketplace.viewmodels.ProductDataStorage
+import com.example.marketplace.viewmodels.*
+import kotlinx.coroutines.launch
 import java.sql.Timestamp
 
 class DetailByCustomerFragment : Fragment() {
 
-    private lateinit var listViewModel: ListViewModel
+    private lateinit var orderViewModel: OrderViewModel
     private lateinit var descriptionText: TextView
     private lateinit var sellerText: TextView
     private lateinit var creationTimeText: TextView
@@ -30,9 +30,12 @@ class DetailByCustomerFragment : Fragment() {
     private lateinit var currencyText: TextView
     private lateinit var ammountTypeText: TextView
     private lateinit var goBack: ImageView
+    private lateinit var orderButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val factory = OrderViewModelFactory(Repository())
+        orderViewModel = ViewModelProvider(this, factory).get(OrderViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -85,6 +88,7 @@ class DetailByCustomerFragment : Fragment() {
         priceText = view.findViewById(R.id.price)
         currencyText = view.findViewById(R.id.currency)
         ammountTypeText = view.findViewById(R.id.amount_type)
+        orderButton = view.findViewById(R.id.order)
     }
 
 }

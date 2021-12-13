@@ -7,7 +7,6 @@ import android.widget.Switch
 
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.SearchView
-import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -68,17 +67,6 @@ class TimelineFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
         val search = menu.findItem(R.id.search)
         val searchView = search.actionView as SearchView
         searchView.queryHint = "Search something cool!"
-
-//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                adapter.filter.filter(newText)
-//                return false
-//            }
-//        })
     }
 
     private fun setupRecyclerView(){

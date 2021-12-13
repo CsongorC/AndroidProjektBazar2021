@@ -19,21 +19,6 @@ class LoginViewModel(val context: Context, val repository: Repository) : ViewMod
         user.value = User()
     }
 
-//    fun login() {
-//        viewModelScope.launch {
-//            val request =
-//                LoginRequest(username = user.value!!.username, password = user.value!!.password)
-//            try {
-//                val result = repository.login(request)
-//                MyApplication.token = result.token
-//                token.value = result.token
-//                Log.d("xxx", "MyApplication - token:  ${MyApplication.token}")
-//            }catch(e: Exception){
-//                Log.d("xxx", "MainViewModel - exception: ${e.toString()}")
-//            }
-//        }
-//    }
-
     suspend fun login() {
         val request =
             LoginRequest(username = user.value!!.username, password = user.value!!.password)

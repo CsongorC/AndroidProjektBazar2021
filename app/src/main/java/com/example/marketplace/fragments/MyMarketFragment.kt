@@ -3,6 +3,7 @@ package com.example.marketplace.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Button
 import android.widget.Switch
 
 import androidx.activity.OnBackPressedCallback
@@ -20,6 +21,7 @@ import com.example.marketplace.model.Product
 import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.ListViewModel
 import com.example.marketplace.viewmodels.ListViewModelFactory
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_timeline.*
 
 class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapter.OnItemLongClickListener, SearchView.OnQueryTextListener {
@@ -40,7 +42,7 @@ class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_timeline, container, false)
+        val view =  inflater.inflate(R.layout.fragment_my_market, container, false)
         recycler_view = view.findViewById(R.id.recycler_view)
         search_layout = view.findViewById(R.id.search)
         search_layout.setOnQueryTextListener(this)
@@ -59,6 +61,12 @@ class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
                 adapter.sortAscending()
             }
         }
+
+        val floatingActionButton: FloatingActionButton = view.findViewById(R.id.floatingActionButton2)
+        floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_myMarketFragment_to_addItemFragment)
+        }
+
         return view
     }
 

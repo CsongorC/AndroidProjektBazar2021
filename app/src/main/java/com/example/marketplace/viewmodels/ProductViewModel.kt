@@ -9,6 +9,8 @@ import com.example.marketplace.model.Image
 import com.example.marketplace.model.Product
 import com.example.marketplace.repository.Repository
 import kotlinx.coroutines.launch
+import retrofit2.http.Header
+import retrofit2.http.Part
 
 class ProductViewModel(private val repository: Repository) : ViewModel() {
 
@@ -28,5 +30,17 @@ class ProductViewModel(private val repository: Repository) : ViewModel() {
             }catch(e: Exception){
                 Log.d("xxx", "ProductViewModel - #remove: ${e.toString()}")
             }
+    }
+
+    suspend fun addProduct(title : String, description : String, price_per_unit : String, units : String, is_active : Boolean, rating : Double, amount_type : String, price_type : String ) {
+        try {
+            val result =
+                repository.addProduct(MyApplication.token, title, description, price_per_unit, units, is_active, rating, amount_type, price_type)
+            code = result.creation
+            Log.d("xxx", "ProductViewModel - #add:  ${code}")
+        }catch(e: Exception){
+            Log.d("xxx", "ProductViewModel - #add: ${e.toString()}")
         }
     }
+}
+
