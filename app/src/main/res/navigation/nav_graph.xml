@@ -91,7 +91,11 @@
         android:id="@+id/myFaresFragment"
         android:name="com.example.marketplace.fragments.MyFaresFragment"
         android:label="fragment_my_fares"
-        tools:layout="@layout/fragment_my_fares" />
+        tools:layout="@layout/fragment_my_fares" >
+        <action
+            android:id="@+id/action_myFaresFragment_to_myFaresOrdersFragment"
+            app:destination="@id/myFaresOrdersFragment" />
+    </fragment>
     <fragment
         android:id="@+id/guestProfileFragment"
         android:name="com.example.marketplace.fragments.GuestProfileFragment"
@@ -116,5 +120,14 @@
         <action
             android:id="@+id/action_addOrderFragment_to_detailByCustomerFragment"
             app:destination="@id/detailByCustomerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myFaresOrdersFragment"
+        android:name="com.example.marketplace.fragments.MyFaresOrdersFragment"
+        android:label="fragment_my_fares_orders"
+        tools:layout="@layout/fragment_my_fares_orders" >
+        <action
+            android:id="@+id/action_myFaresOrdersFragment_to_myFaresFragment"
+            app:destination="@id/myFaresFragment" />
     </fragment>
 </navigation>

@@ -39,6 +39,7 @@ class OrderAdapter(
         val textView_buyer: TextView = itemView.findViewById(R.id.textView_buyer_name)
         val textView_price: TextView = itemView.findViewById(R.id.textView_price_item_layout)
         val textView_amount: TextView = itemView.findViewById(R.id.amount_text)
+        val textView_status: TextView = itemView.findViewById(R.id.status)
         val time: TextView = itemView.findViewById(R.id.time_text)
         //val imageView: ImageView = itemView.findViewById(R.id.imageView_item_layout)
 
@@ -67,7 +68,7 @@ class OrderAdapter(
     // 2. Called only a few times = number of items on screen + a few more ones
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_sell_layout, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_buy_layout, parent, false)
         return DataViewHolder(itemView)
     }
 
@@ -79,6 +80,7 @@ class OrderAdapter(
         holder.textView_buyer.text = currentItem.username
         holder.textView_price.text = currentItem.price_per_unit
         holder.textView_amount.text = currentItem.units
+        holder.textView_status.text = currentItem.status
         val creationTimeLong = currentItem.creation_time
         val creationTime = Timestamp(creationTimeLong)
         holder.time.text = creationTime.toString().subSequence(0,10)
