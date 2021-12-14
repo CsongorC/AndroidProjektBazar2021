@@ -48,11 +48,11 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="10000dp"
+            android:layout_width="1000dp"
             android:layout_height="wrap_content"
-            android:gravity="left"
+            android:textAlignment="viewStart"
             android:text="Title"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="25dp"
             android:textColor="@color/deep_pine_green"
             android:layout_marginTop="280dp"
             android:textSize="30sp"
@@ -60,47 +60,11 @@
 
         <TextView
             android:id="@+id/price"
-            android:layout_width="80dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:textAlignment="viewStart"
             android:text="1000"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/deep_pine_green"
-            android:layout_marginTop="340dp"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/currency"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="RON"
-            android:layout_marginStart="60dp"
-            android:textColor="@color/deep_pine_green"
-            android:layout_marginTop="340dp"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/separator"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="/"
-            android:layout_marginStart="90dp"
-            android:textColor="@color/deep_pine_green"
-            android:layout_marginTop="340dp"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/amount_type"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="L"
-            android:layout_marginStart="110dp"
+            android:layout_marginStart="25dp"
             android:textColor="@color/deep_pine_green"
             android:layout_marginTop="340dp"
             android:textSize="20sp"

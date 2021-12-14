@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/deep_pine_green"
+    tools:context=".fragments.AddOrderFragment">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/add_order_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="554dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="35dp"
+        app:cardBackgroundColor="@color/light_peach"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp">
+
+        <ImageView
+            android:id="@+id/seller_picture"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="97dp"
+            android:layout_marginBottom="210dp"
+            android:src="@drawable/ic_user" />
+
+        <TextView
+            android:id="@+id/seller_add_order"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="56dp"
+            android:textAlignment="viewStart"
+            android:text="Cameron Williamson"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title_add_order"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="110dp"
+            android:textAlignment="viewStart"
+            android:text="Palinka de prune"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price_add_order"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="160dp"
+            android:text="45 RON/L"
+            android:textAlignment="viewStart"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/is_active_add_order"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="200dp"
+            android:text="Active"
+            android:textAlignment="viewStart"
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/time_add_order"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="202dp"
+            android:text="2021.12.14"
+            android:layout_gravity="right"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/deep_pine_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.708"
+            android:layout_marginTop="260dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginStart="60dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/amount_order"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:layout_marginStart="35dp"
+            android:ems="10"
+            android:hint="Amount"
+            android:textColor="@color/deep_pine_green"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/deep_pine_green"
+            android:background="@drawable/edit_text_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/comments"
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="390dp"
+            android:layout_marginStart="35dp"
+            android:ems="10"
+            android:hint="Comments"
+            android:textColor="@color/deep_pine_green"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/deep_pine_green"
+            android:background="@drawable/edit_text_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/cancel_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="470dp"
+            android:layout_marginStart="40dp"
+            android:backgroundTint="@color/deep_grey"
+            android:textColor="@color/light_peach"
+            android:text="Cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_password_login_fragment" />
+
+        <Button
+            android:id="@+id/send_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="470dp"
+            android:layout_marginStart="187dp"
+            android:backgroundTint="@color/orange"
+            android:textColor="@color/light_peach"
+            android:text="Send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_password_login_fragment" />
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

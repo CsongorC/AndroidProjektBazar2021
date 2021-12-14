@@ -37,6 +37,7 @@ interface MarketApi {
     @GET(Constants.GET_ORDER_URL)
     suspend fun getOrders(@Header("token") token: String, @Header("limit") limit: String): OrderResponse
 
+    @Multipart
     @POST(Constants.ADD_ORDER_URL)
     suspend fun addOrder(@Header("token") token: String,
                          @Part("title") title : String,
@@ -44,5 +45,6 @@ interface MarketApi {
                          @Part("price_per_unit") price_per_unit : String,
                          @Part("units") units : String,
                          @Part("status") status : String,
-                         @Part("owner_username") owner_username : String): OrderAddResponse
+                         @Part("owner_username") owner_username : String,
+                         @Part("messages") messages : String): OrderAddResponse
 }

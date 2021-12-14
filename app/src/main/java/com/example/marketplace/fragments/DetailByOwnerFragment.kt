@@ -31,8 +31,6 @@ class DetailByOwnerFragment : Fragment() {
     private lateinit var creationTimeText: TextView
     private lateinit var titleText: TextView
     private lateinit var priceText: TextView
-    private lateinit var currencyText: TextView
-    private lateinit var ammountTypeText: TextView
     private lateinit var goBack: ImageView
     private lateinit var deleteItem: ImageView
 
@@ -95,9 +93,8 @@ class DetailByOwnerFragment : Fragment() {
         val creationTime = Timestamp(creationTimeLong)
         creationTimeText.text = creationTime.toString().subSequence(0,10)
         titleText.text = ProductDataStorage.productDetail.title
-        priceText.text = ProductDataStorage.productDetail.price_per_unit
-        currencyText.text = ProductDataStorage.productDetail.price_type
-        ammountTypeText.text = ProductDataStorage.productDetail.amount_type
+        val price : String = ProductDataStorage.productDetail.price_per_unit.plus(" ").plus(ProductDataStorage.productDetail.price_type).plus("/").plus(ProductDataStorage.productDetail.amount_type)
+        priceText.text = price
     }
 
     private fun initializeView(view: View) {
@@ -106,8 +103,6 @@ class DetailByOwnerFragment : Fragment() {
         creationTimeText = view.findViewById(R.id.creationTime)
         titleText = view.findViewById(R.id.title)
         priceText = view.findViewById(R.id.price)
-        currencyText = view.findViewById(R.id.currency)
-        ammountTypeText = view.findViewById(R.id.amount_type)
     }
 
 }

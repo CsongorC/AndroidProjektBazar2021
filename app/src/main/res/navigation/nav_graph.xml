@@ -60,7 +60,11 @@
         android:id="@+id/detailByCustomerFragment"
         android:name="com.example.marketplace.fragments.DetailByCustomerFragment"
         android:label="fragment_detail_by_customer"
-        tools:layout="@layout/fragment_detail_by_customer" />
+        tools:layout="@layout/fragment_detail_by_customer" >
+        <action
+            android:id="@+id/action_detailByCustomerFragment_to_addOrderFragment"
+            app:destination="@id/addOrderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myMarketFragment"
         android:name="com.example.marketplace.fragments.MyMarketFragment"
@@ -103,5 +107,14 @@
         <action
             android:id="@+id/action_addItemFragment_to_myMarketFragment"
             app:destination="@id/myMarketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addOrderFragment"
+        android:name="com.example.marketplace.fragments.AddOrderFragment"
+        android:label="fragment_add_order"
+        tools:layout="@layout/fragment_add_order" >
+        <action
+            android:id="@+id/action_addOrderFragment_to_detailByCustomerFragment"
+            app:destination="@id/detailByCustomerFragment" />
     </fragment>
 </navigation>

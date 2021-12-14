@@ -52,6 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
         <TextView
+            android:id="@+id/textview_ongoing_sales"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginStart="40dp"
@@ -69,14 +70,14 @@
             android:background="@color/light_peach" />
 
         <TextView
-            android:id="@+id/textview_login"
+            android:id="@+id/textview_ongoing_orders"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
             android:textStyle="bold"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/light_peach"
+            android:textColor="@color/deep_grey"
             android:textSize="15sp"
             android:text="Ongoing orders"/>
 

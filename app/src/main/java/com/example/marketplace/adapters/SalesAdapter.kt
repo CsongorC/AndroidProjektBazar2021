@@ -14,7 +14,7 @@ import com.example.marketplace.model.Order
 import com.example.marketplace.viewmodels.*
 import java.sql.Timestamp
 
-class OrderAdapter(
+class SalesAdapter(
     private var list: ArrayList<Order>,
     private var listOfMyProducts: ArrayList<Order>,
     var listFiltered: ArrayList<Order>,
@@ -22,7 +22,7 @@ class OrderAdapter(
     private val listener: OnItemClickListener,
     private val listener2: OnItemLongClickListener
 ) :
-    RecyclerView.Adapter<OrderAdapter.DataViewHolder>(), Filterable {
+    RecyclerView.Adapter<SalesAdapter.DataViewHolder>(), Filterable {
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
@@ -88,7 +88,7 @@ class OrderAdapter(
 
     // Update the list
     fun setData(newlist: ArrayList<Order>) {
-        list = newlist.filter{ s -> s.username == ProductDataStorage.username} as ArrayList<Order>
+        list = newlist.filter{ s -> s.owner_username == ProductDataStorage.username} as ArrayList<Order>
         listFiltered = list
         notifyDataSetChanged()
     }

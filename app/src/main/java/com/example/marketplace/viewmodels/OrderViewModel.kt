@@ -33,11 +33,11 @@ class OrderViewModel(private val repository: Repository) : ViewModel() {
         }
     }
 
-    fun addOrder(title : String, description : String, price_per_unit : String, unit : String, status : String, owner_username : String) {
+    fun addOrder(title : String, description : String, price_per_unit : String, unit : String, status : String, owner_username : String, messages : String) {
         viewModelScope.launch {
             try {
                 val result =
-                    repository.addOrder(MyApplication.token,title, description, price_per_unit, unit, status, owner_username)
+                    repository.addOrder(MyApplication.token,title, description, price_per_unit, unit, status, owner_username, messages)
                 code = result.creation
                 Log.d("xxx", "OrderViewModel - #orders:  ${code}")
             }catch(e: Exception){

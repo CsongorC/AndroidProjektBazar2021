@@ -22,9 +22,11 @@
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/drawable/tab_color.xml" value="0.2703125" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/add_item_toolbar.xml" value="0.18541666666666667" />
+        <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/add_order_toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/details_toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_add_item.xml" value="0.23072916666666668" />
-        <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_detail_by_customer.xml" value="0.22" />
+        <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_add_order.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_detail_by_customer.xml" value="0.12398268398268399" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_detail_by_owner.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_forgot_password.xml" value="0.25317028985507245" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/fragment_guest_profile.xml" value="0.36666666666666664" />
@@ -39,6 +41,7 @@
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/item_layout.xml" value="0.5" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/item_sell_layout.xml" value="0.75" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/loginbutton.xml" value="0.22554347826086957" />
+        <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/my_order.xml" value="0.22760416666666666" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/profile_guest_toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/profile_toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/GitHub/AndroidProjektBazar2021/app/src/main/res/layout/toolbar.xml" value="0.36666666666666664" />

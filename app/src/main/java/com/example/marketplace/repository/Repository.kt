@@ -48,7 +48,8 @@ class Repository {
                            price_per_unit : String,
                            units : String,
                            status : String,
-                           owner_username : String): OrderAddResponse{
-        return RetrofitInstance.api.addOrder(token, title , description, price_per_unit, units, status, owner_username)
+                           owner_username : String,
+                           messages : String): OrderAddResponse{
+        return RetrofitInstance.api.addOrder(token, title , description, price_per_unit, units, status, owner_username, messages)
     }
 }
