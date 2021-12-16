@@ -67,7 +67,7 @@ class MyProductsAdapter(
     // 2. Called only a few times = number of items on screen + a few more ones
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.my_item_layout, parent, false)
         return DataViewHolder(itemView)
     }
 
@@ -75,9 +75,9 @@ class MyProductsAdapter(
     // 3. Called many times, when we scroll the list
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val currentItem = listFiltered[position]
-        holder.textView_name.text = currentItem.title
-        holder.textView_price.text = currentItem.price_per_unit
-        holder.textView_seller.text = currentItem.username
+        holder.textView_name.text = currentItem.title.replace("\"", "")
+        holder.textView_price.text = currentItem.price_per_unit.replace("\"", "")
+        holder.textView_seller.text = currentItem.username.replace("\"", "")
         val images = currentItem.images
         if (images != null && images.isNotEmpty()) {
             Log.d("xxx", "#num_images: ${images.size}")

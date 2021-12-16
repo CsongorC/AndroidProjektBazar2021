@@ -18,6 +18,10 @@
     <string name="profile">Profile</string>
     <string name="seller">Seller:</string>
     <string name="publish">Publish</string>
+    <string name="accepted">Accepted</string>
+    <string name="declined">Declined</string>
+    <string name="price">Price:</string>
+    <string name="amount">Amount:</string>
     <string-array name="amount_types">
         <item>KG</item>
         <item>G</item>

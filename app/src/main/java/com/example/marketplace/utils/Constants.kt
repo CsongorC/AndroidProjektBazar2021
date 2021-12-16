@@ -10,4 +10,6 @@ object Constants {
     const val PRODUCT_ADD = "products/add"
     const val GET_ORDER_URL = "orders"
     const val ADD_ORDER_URL = "orders/add"
+    const val REMOVE_ORDER_URL = "orders/remove"
+    const val UPDATE_ORDER_URL = "orders/update"
 }

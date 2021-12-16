@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -40,6 +41,7 @@ class OrderAdapter(
         val textView_price: TextView = itemView.findViewById(R.id.textView_price_item_layout)
         val textView_amount: TextView = itemView.findViewById(R.id.amount_text)
         val textView_status: TextView = itemView.findViewById(R.id.status)
+        val ok: ImageView = itemView.findViewById(R.id.picture_status)
         val time: TextView = itemView.findViewById(R.id.time_text)
         //val imageView: ImageView = itemView.findViewById(R.id.imageView_item_layout)
 
@@ -76,11 +78,14 @@ class OrderAdapter(
     // 3. Called many times, when we scroll the list
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val currentItem = listFiltered[position]
-        holder.textView_title.text = currentItem.title
-        holder.textView_buyer.text = currentItem.username
-        holder.textView_price.text = currentItem.price_per_unit
-        holder.textView_amount.text = currentItem.units
-        holder.textView_status.text = currentItem.status
+        holder.textView_title.text = currentItem.title.replace("\"", "")
+        holder.textView_buyer.text = currentItem.username.replace("\"", "")
+        holder.textView_price.text = currentItem.price_per_unit.replace("\"", "")
+        holder.textView_amount.text = currentItem.units.replace("\"", "")
+        holder.textView_status.text = currentItem.status.replace("\"", "")
+        if(currentItem.status != "ACCEPTED"){
+            holder.ok.visibility = View.GONE
+        }
         val creationTimeLong = currentItem.creation_time
         val creationTime = Timestamp(creationTimeLong)
         holder.time.text = creationTime.toString().subSequence(0,10)

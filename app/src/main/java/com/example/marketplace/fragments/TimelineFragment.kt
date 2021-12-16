@@ -73,12 +73,6 @@ class TimelineFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
         adapter = DataAdapter(ArrayList<Product>(), ArrayList<Product>(),ArrayList<Product>(), this.requireContext(), this, this)
         recycler_view.adapter = adapter
         recycler_view.layoutManager = LinearLayoutManager(this.context)
-        recycler_view.addItemDecoration(
-            DividerItemDecoration(
-                activity,
-                DividerItemDecoration.VERTICAL
-            )
-        )
         recycler_view.setHasFixedSize(true)
     }
 

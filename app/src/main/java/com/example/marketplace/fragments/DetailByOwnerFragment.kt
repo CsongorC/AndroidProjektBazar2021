@@ -25,7 +25,6 @@ import java.sql.Timestamp
 class DetailByOwnerFragment : Fragment() {
 
     private lateinit var productViewModel: ProductViewModel
-    private lateinit var listViewModel: ListViewModel
     private lateinit var descriptionText: TextView
     private lateinit var sellerText: TextView
     private lateinit var creationTimeText: TextView
@@ -87,14 +86,14 @@ class DetailByOwnerFragment : Fragment() {
     }
 
     private fun loadDetails(){
-        descriptionText.text = ProductDataStorage.productDetail.description
-        sellerText.text = ProductDataStorage.productDetail.username
+        descriptionText.text = ProductDataStorage.productDetail.description.replace("\"", "")
+        sellerText.text = ProductDataStorage.productDetail.username.replace("\"", "")
         val creationTimeLong = ProductDataStorage.productDetail.creation_time
         val creationTime = Timestamp(creationTimeLong)
         creationTimeText.text = creationTime.toString().subSequence(0,10)
-        titleText.text = ProductDataStorage.productDetail.title
+        titleText.text = ProductDataStorage.productDetail.title.replace("\"", "")
         val price : String = ProductDataStorage.productDetail.price_per_unit.plus(" ").plus(ProductDataStorage.productDetail.price_type).plus("/").plus(ProductDataStorage.productDetail.amount_type)
-        priceText.text = price
+        priceText.text = price.replace("\"", "")
     }
 
     private fun initializeView(view: View) {

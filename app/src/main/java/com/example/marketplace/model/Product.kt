@@ -70,3 +70,22 @@ data class OrderAddResponse(
     var title: String,
     var creation_time: Long
 )
+
+@JsonClass(generateAdapter = true)
+data class OrderRemoveResponse(
+    var message: String,
+    var order_id: String,
+    var deletion_time: Long
+)
+
+@JsonClass(generateAdapter = true)
+data class OrderUpdateRequest (
+    var units: String,
+    var status: String
+)
+
+@JsonClass(generateAdapter = true)
+data class OrderUpdateResponse(
+    var creation_time: Long,
+    var status: String
+)

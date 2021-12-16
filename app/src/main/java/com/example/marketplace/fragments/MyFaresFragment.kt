@@ -88,12 +88,6 @@ class MyFaresFragment : Fragment(), SalesAdapter.OnItemClickListener, SalesAdapt
         salesAdapter = SalesAdapter(ArrayList<Order>(), ArrayList<Order>(),ArrayList<Order>(), this.requireContext(),this,this)
         recycler_view.adapter = salesAdapter
         recycler_view.layoutManager = LinearLayoutManager(this.context)
-        recycler_view.addItemDecoration(
-            DividerItemDecoration(
-                activity,
-                DividerItemDecoration.VERTICAL
-            )
-        )
         recycler_view.setHasFixedSize(true)
     }
 

@@ -47,4 +47,14 @@ interface MarketApi {
                          @Part("status") status : String,
                          @Part("owner_username") owner_username : String,
                          @Part("messages") messages : String): OrderAddResponse
+
+    @POST(Constants.REMOVE_ORDER_URL)
+    suspend fun removeOrder(@Header("token") token: String,
+                            @Query("order_id") order_id : String): OrderRemoveResponse
+
+    @POST(Constants.UPDATE_ORDER_URL)
+    suspend fun updateOrder(@Header("token") token: String,
+                            @Query("order_id") order_id : String,
+                            @Body request: OrderUpdateRequest
+                            ): OrderUpdateResponse
 }

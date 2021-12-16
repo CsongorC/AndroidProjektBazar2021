@@ -93,12 +93,6 @@ class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
         adapter = MyProductsAdapter(ArrayList<Product>(), ArrayList<Product>(),  this.requireContext(), this, this)
         recycler_view.adapter = adapter
         recycler_view.layoutManager = LinearLayoutManager(this.context)
-        recycler_view.addItemDecoration(
-            DividerItemDecoration(
-                activity,
-                DividerItemDecoration.VERTICAL
-            )
-        )
         recycler_view.setHasFixedSize(true)
     }
 

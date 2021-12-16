@@ -62,6 +62,7 @@ class DataAdapter(
             val currentPosition = this.adapterPosition
             listener2.onItemLongClick(currentPosition)
             if (p0 != null) {
+                ProductDataStorage.loginUser.username = listFiltered[currentPosition].username
                 ProductDataStorage.productDetail = listFiltered[currentPosition]
                 p0.findNavController().navigate(R.id.action_listFragment_to_detailByCustomerFragment)
             }
@@ -80,9 +81,9 @@ class DataAdapter(
     // 3. Called many times, when we scroll the list
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val currentItem = listFiltered[position]
-        holder.textView_name.text = currentItem.title
-        holder.textView_price.text = currentItem.price_per_unit
-        holder.textView_seller.text = currentItem.username
+        holder.textView_name.text = currentItem.title.replace("\"", "")
+        holder.textView_price.text = currentItem.price_per_unit.replace("\"", "")
+        holder.textView_seller.text = currentItem.username.replace("\"", "")
         val images = currentItem.images
         if (images.isNotEmpty()) {
             Log.d("xxx", "#num_images: ${images.size}")
@@ -133,7 +134,7 @@ class DataAdapter(
                     val filteredList = ArrayList<Product>()
                     list
                         .filter {
-                            (it.title.contains(constraint!!)) or (it.description.contains(constraint))
+                            (it.title.contains(constraint!!))
                         }
                         .forEach { filteredList.add(it) }
                     listFiltered = filteredList

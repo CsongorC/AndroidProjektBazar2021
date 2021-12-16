@@ -1,9 +1,11 @@
 package com.example.marketplace.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
@@ -32,7 +34,6 @@ class SalesAdapter(
         fun onItemLongClick(position: Int)
     }
 
-    // 1. user defined ViewHolder type - Embedded class!
     inner class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener, View.OnLongClickListener {
         val textView_title: TextView = itemView.findViewById(R.id.textView_name_item_layout)
@@ -40,7 +41,6 @@ class SalesAdapter(
         val textView_price: TextView = itemView.findViewById(R.id.textView_price_item_layout)
         val textView_amount: TextView = itemView.findViewById(R.id.amount_text)
         val time: TextView = itemView.findViewById(R.id.time_text)
-        //val imageView: ImageView = itemView.findViewById(R.id.imageView_item_layout)
 
         init {
             itemView.setOnClickListener(this)
@@ -58,7 +58,7 @@ class SalesAdapter(
             listener2.onItemLongClick(currentPosition)
             if (p0 != null) {
                 ProductDataStorage.orderDetail = listFiltered[currentPosition]
-                p0.findNavController().navigate(R.id.action_listFragment_to_detailByCustomerFragment)
+                p0.findNavController().navigate(R.id.action_myFaresFragment_to_orderSellDetailFragment)
             }
             return true
         }
@@ -75,10 +75,10 @@ class SalesAdapter(
     // 3. Called many times, when we scroll the list
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val currentItem = listFiltered[position]
-        holder.textView_title.text = currentItem.title
-        holder.textView_buyer.text = currentItem.username
-        holder.textView_price.text = currentItem.price_per_unit
-        holder.textView_amount.text = currentItem.units
+        holder.textView_title.text = currentItem.title.replace("\"", "")
+        holder.textView_buyer.text = currentItem.username.replace("\"", "")
+        holder.textView_price.text = currentItem.price_per_unit.replace("\"", "")
+        holder.textView_amount.text = currentItem.units.replace("\"", "")
         val creationTimeLong = currentItem.creation_time
         val creationTime = Timestamp(creationTimeLong)
         holder.time.text = creationTime.toString().subSequence(0,10)
@@ -90,20 +90,6 @@ class SalesAdapter(
     fun setData(newlist: ArrayList<Order>) {
         list = newlist.filter{ s -> s.owner_username == ProductDataStorage.username} as ArrayList<Order>
         listFiltered = list
-        notifyDataSetChanged()
-    }
-
-    fun sortAscending(){
-        listFiltered.sortBy {
-            it.creation_time
-        }
-        notifyDataSetChanged()
-    }
-
-    fun sortDescending(){
-        listFiltered.sortByDescending {
-            it.creation_time
-        }
         notifyDataSetChanged()
     }
 

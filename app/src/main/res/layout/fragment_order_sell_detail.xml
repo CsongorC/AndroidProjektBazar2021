@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/deep_pine_green"
-    tools:context=".fragments.ProfileFragment">
+    tools:context=".fragments.OrderSellDetailFragment">
 
     <include
-    layout="@layout/details_toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+        layout="@layout/order_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
@@ -42,7 +42,7 @@
             android:text="Description"
             android:layout_marginStart="10dp"
             android:textColor="@color/deep_pine_green"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="365dp"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
             android:text="Title"
             android:layout_marginStart="25dp"
             android:textColor="@color/deep_pine_green"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="235dp"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -64,9 +64,45 @@
             android:layout_height="wrap_content"
             android:textAlignment="viewStart"
             android:text="1000"
+            android:layout_marginStart="85dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="290dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="@string/price"
             android:layout_marginStart="25dp"
             android:textColor="@color/deep_pine_green"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="290dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount_text"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="@string/amount"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="330dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount_orderSell"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="5"
+            android:layout_marginStart="110dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="330dp"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -75,7 +111,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="190dp"
             android:layout_marginBottom="16dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -85,78 +121,72 @@
             />
 
         <TextView
-            android:id="@+id/seller"
+            android:id="@+id/buyer"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Seller"
+            android:text="Buyer"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="233dp"
+            android:layout_marginTop="194dp"
             android:textColor="@color/deep_pine_green"
             android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/creationTime"
+            android:id="@+id/creationTime_orderSell"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Creation time"
             android:layout_marginStart="200dp"
-            android:layout_marginTop="235dp"
+            android:layout_marginTop="194dp"
             android:textColor="@color/deep_pine_green"
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/email_button"
-            android:layout_width="55dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="490dp"
-            android:layout_marginStart="55dp"
-            android:backgroundTint="@color/deep_grey"
-            android:textSize="10dp"
-            android:textColorHint="@color/light_peach"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            android:drawableLeft="@drawable/ic_baseline_mail_24"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number"
-            app:cornerRadius="100dp"/>
+        <TextView
+            android:id="@+id/status_orderSell"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OPEN"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="225dp"
+            android:textColor="@color/orange"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/order"
+            android:id="@+id/accept_orderSell"
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:layout_marginTop="490dp"
-            android:layout_marginStart="125dp"
+            android:layout_marginStart="75dp"
             android:backgroundTint="@color/orange"
             android:textSize="10dp"
             android:textColorHint="@color/light_peach"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:icon="@drawable/ic_baseline_shopping_cart_24"
-            app:iconGravity="start"
+            android:drawableLeft="@drawable/ic_baseline_check_24"
             app:layout_constraintTop_toBottomOf="@+id/phone_number"
             app:cornerRadius="100dp"/>
 
         <Button
-            android:id="@+id/call"
+            android:id="@+id/decline_orderSell"
             android:layout_width="55dp"
             android:layout_height="65dp"
             android:layout_marginTop="490dp"
-            android:layout_marginStart="195dp"
+            android:layout_marginStart="175dp"
             android:backgroundTint="@color/deep_grey"
             android:textSize="10dp"
             android:textColorHint="@color/light_peach"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            android:drawableLeft="@drawable/ic_baseline_phone_24"
+            android:drawableLeft="@drawable/ic_baseline_close_24"
             app:layout_constraintTop_toBottomOf="@+id/phone_number"
             app:cornerRadius="100dp"/>
-
     </androidx.cardview.widget.CardView>
 
 

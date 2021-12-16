@@ -52,4 +52,12 @@ class Repository {
                            messages : String): OrderAddResponse{
         return RetrofitInstance.api.addOrder(token, title , description, price_per_unit, units, status, owner_username, messages)
     }
+
+    suspend fun removeOrder(  token: String, order_id: String): OrderRemoveResponse{
+        return RetrofitInstance.api.removeOrder(token, order_id)
+    }
+
+    suspend fun updateOrder(token: String, order_id: String, updateOrderRequest : OrderUpdateRequest): OrderUpdateResponse{
+        return RetrofitInstance.api.updateOrder(token, order_id, updateOrderRequest)
+    }
 }

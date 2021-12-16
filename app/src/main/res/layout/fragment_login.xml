@@ -44,7 +44,7 @@
                 android:hint="Name"
                 android:text="csongorcs"
                 android:textColor="@color/deep_pine_green"
-                android:inputType="textPersonName"
+                android:inputType="textEmailAddress"
                 android:textColorHint="@color/deep_pine_green"
                 android:background="@drawable/edit_text_border"
                 app:layout_constraintEnd_toEndOf="parent"

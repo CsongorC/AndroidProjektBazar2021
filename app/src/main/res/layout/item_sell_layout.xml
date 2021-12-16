@@ -22,8 +22,8 @@
             android:id="@+id/textView_name_item_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="75dp"
             android:text="Title"
             android:textColor="@color/deep_pine_green"
             android:textSize="17sp"
@@ -78,7 +78,7 @@
             android:id="@+id/price_text_const"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
+            android:layout_marginStart="190dp"
             android:layout_marginTop="127dp"
             android:text="Price:"
             android:textColor="@color/deep_pine_green"
@@ -92,7 +92,7 @@
             android:id="@+id/textView_price_item_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="187dp"
+            android:layout_marginStart="227dp"
             android:layout_marginTop="127dp"
             android:textColor="@color/deep_pine_green"
             android:text="5000"
@@ -143,36 +143,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/decline"
-            android:layout_width="37dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginStart="250dp"
-            android:backgroundTint="@color/deep_grey"
-            android:textSize="10dp"
-            android:textColorHint="@color/light_peach"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            android:drawableBottom="@drawable/ic_baseline_close_24"
-            app:cornerRadius="100dp" />
+<!--        <Button-->
+<!--            android:id="@+id/decline_incoming_order"-->
+<!--            android:layout_width="37dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_marginTop="55dp"-->
+<!--            android:layout_marginStart="250dp"-->
+<!--            android:backgroundTint="@color/deep_grey"-->
+<!--            android:textSize="10dp"-->
+<!--            android:textColorHint="@color/light_peach"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.497"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            android:drawableBottom="@drawable/ic_baseline_close_24"-->
+<!--            app:cornerRadius="100dp" />-->
 
-        <Button
-            android:id="@+id/accept"
-            android:layout_marginTop="100dp"
-            android:layout_width="37dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="250dp"
-            android:backgroundTint="@color/orange"
-            android:textSize="10dp"
-            android:textColorHint="@color/light_peach"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phone_number"
-            android:drawableBottom="@drawable/ic_baseline_check_24"
-            app:cornerRadius="100dp" />
+<!--        <Button-->
+<!--            android:id="@+id/accept_incoming_order"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--            android:layout_width="37dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_marginStart="250dp"-->
+<!--            android:backgroundTint="@color/orange"-->
+<!--            android:textSize="10dp"-->
+<!--            android:textColorHint="@color/light_peach"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.497"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/phone_number"-->
+<!--            android:drawableBottom="@drawable/ic_baseline_check_24"-->
+<!--            app:cornerRadius="100dp" />-->
 
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

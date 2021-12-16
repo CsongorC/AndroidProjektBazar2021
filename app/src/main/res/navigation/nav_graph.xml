@@ -95,6 +95,9 @@
         <action
             android:id="@+id/action_myFaresFragment_to_myFaresOrdersFragment"
             app:destination="@id/myFaresOrdersFragment" />
+        <action
+            android:id="@+id/action_myFaresFragment_to_orderSellDetailFragment"
+            app:destination="@id/orderSellDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/guestProfileFragment"
@@ -130,4 +133,9 @@
             android:id="@+id/action_myFaresOrdersFragment_to_myFaresFragment"
             app:destination="@id/myFaresFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/orderSellDetailFragment"
+        android:name="com.example.marketplace.fragments.OrderSellDetailFragment"
+        android:label="fragment_order_sell_detail"
+        tools:layout="@layout/fragment_order_sell_detail" />
 </navigation>
