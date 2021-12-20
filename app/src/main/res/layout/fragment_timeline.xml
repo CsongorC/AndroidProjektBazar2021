@@ -66,6 +66,17 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
+        <TextView
+            android:id="@+id/latest_oldest"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Latest"
+            android:textColor="@color/light_peach"
+            android:textSize="18sp"
+            android:layout_marginStart="10dp"
+            tools:layout_editor_absoluteX="11dp"
+            tools:layout_editor_absoluteY="59dp" />
+
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

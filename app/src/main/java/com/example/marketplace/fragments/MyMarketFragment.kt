@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.Switch
+import android.widget.TextView
 
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.SearchView
@@ -21,6 +22,7 @@ import com.example.marketplace.model.Product
 import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.ListViewModel
 import com.example.marketplace.viewmodels.ListViewModelFactory
+import com.example.marketplace.viewmodels.ProductDataStorage
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_timeline.*
 
@@ -30,6 +32,7 @@ class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
     private lateinit var search_layout: SearchView
     private lateinit var adapter: MyProductsAdapter
     private lateinit var switchButton : Switch
+    private lateinit var latestNewest : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,19 +54,24 @@ class MyMarketFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
             adapter.setData(listViewModel.products.value as ArrayList<Product>)
             adapter.notifyDataSetChanged()
         }
+
+        latestNewest = view.findViewById(R.id.latest_oldest)
         switchButton = view.findViewById(R.id.switch1)
 
         switchButton.setOnClickListener {
             if (switch1.isChecked){
                 adapter.sortDescending()
+                latestNewest.text = getString(R.string.newest)
             }
             else{
                 adapter.sortAscending()
+                latestNewest.text=getString(R.string.latest)
             }
         }
 
         val floatingActionButton: FloatingActionButton = view.findViewById(R.id.floatingActionButton2)
         floatingActionButton.setOnClickListener {
+            ProductDataStorage.loginUser.username = ProductDataStorage.username
             findNavController().navigate(R.id.action_myMarketFragment_to_addItemFragment)
         }
 

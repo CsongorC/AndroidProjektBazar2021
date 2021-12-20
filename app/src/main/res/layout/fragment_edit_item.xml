@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/deep_pine_green"
-    tools:context=".fragments.ProfileFragment">
+    tools:context=".fragments.EditItemFragment">
 
     <include
-        layout="@layout/details_toolbar"
+        layout="@layout/edit_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -34,59 +34,43 @@
             android:layout_marginBottom="250dp"
             android:src="@drawable/ic_item" />
 
-        <ImageView
-            android:id="@+id/edit_item"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="240dp"
-            android:layout_marginStart="125dp"
-            android:layout_marginBottom="250dp"
-            android:src="@drawable/ic_baseline_edit_24" />
-
-        <ImageView
-            android:id="@+id/delete"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="240dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginBottom="250dp"
-            android:src="@drawable/ic_baseline_delete_24" />
-
-        <TextView
-            android:id="@+id/description"
+        <EditText
+            android:id="@+id/description_edit"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Description"
+            android:textColorHint="@color/deep_pine_green"
             android:layout_marginStart="10dp"
             android:textColor="@color/deep_pine_green"
             android:layout_marginTop="400dp"
+            android:theme="@style/MyEditText"
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="1000dp"
+        <EditText
+            android:id="@+id/title_edit"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:textAlignment="viewStart"
-            android:text="Title"
-            android:layout_marginStart="30dp"
             android:textColor="@color/deep_pine_green"
+            android:textColorHint="@color/deep_pine_green"
+            android:layout_marginStart="25dp"
+            android:theme="@style/MyEditText"
             android:layout_marginTop="280dp"
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="250dp"
+        <EditText
+            android:id="@+id/price_edit"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:textAlignment="viewStart"
-            android:text="1000"
-            android:layout_marginStart="30dp"
             android:textColor="@color/deep_pine_green"
+            android:textColorHint="@color/deep_pine_green"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="340dp"
+            android:theme="@style/MyEditText"
+            android:backgroundTint="@color/orange"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -105,19 +89,32 @@
             />
 
         <TextView
-            android:id="@+id/seller"
-            android:layout_width="100dp"
+            android:id="@+id/seller_edit"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:textAlignment="viewStart"
-            android:text="Seller"
-            android:layout_marginStart="50dp"
+            android:gravity="center"
+            android:textColorHint="@color/deep_pine_green"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="233dp"
             android:textColor="@color/deep_pine_green"
             android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/creationTime"
+            android:id="@+id/price_suffix"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="RON/KG"
+            android:textColorHint="@color/deep_pine_green"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="352dp"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/creationTime_edit"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -127,6 +124,16 @@
             android:textColor="@color/deep_pine_green"
             android:textSize="15sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/save_changes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="480dp"
+            android:layout_marginStart="70dp"
+            android:backgroundTint="@color/orange"
+            android:textColorHint="@color/light_peach"
+            android:text="Save changes" />
 
     </androidx.cardview.widget.CardView>
 

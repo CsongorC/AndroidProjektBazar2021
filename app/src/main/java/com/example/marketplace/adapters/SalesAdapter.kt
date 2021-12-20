@@ -40,6 +40,7 @@ class SalesAdapter(
         val textView_buyer: TextView = itemView.findViewById(R.id.textView_buyer_name)
         val textView_price: TextView = itemView.findViewById(R.id.textView_price_item_layout)
         val textView_amount: TextView = itemView.findViewById(R.id.amount_text)
+        val textView_status: TextView = itemView.findViewById(R.id.status)
         val time: TextView = itemView.findViewById(R.id.time_text)
 
         init {
@@ -79,6 +80,7 @@ class SalesAdapter(
         holder.textView_buyer.text = currentItem.username.replace("\"", "")
         holder.textView_price.text = currentItem.price_per_unit.replace("\"", "")
         holder.textView_amount.text = currentItem.units.replace("\"", "")
+        holder.textView_status.text = currentItem.status.replace("\"","")
         val creationTimeLong = currentItem.creation_time
         val creationTime = Timestamp(creationTimeLong)
         holder.time.text = creationTime.toString().subSequence(0,10)

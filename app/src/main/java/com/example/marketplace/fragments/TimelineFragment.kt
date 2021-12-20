@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Switch
+import android.widget.TextView
 
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.SearchView
@@ -19,6 +20,7 @@ import com.example.marketplace.model.Product
 import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.ListViewModel
 import com.example.marketplace.viewmodels.ListViewModelFactory
+import com.example.marketplace.viewmodels.ProductDataStorage
 import kotlinx.android.synthetic.main.fragment_timeline.*
 
 class TimelineFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapter.OnItemLongClickListener, SearchView.OnQueryTextListener {
@@ -27,6 +29,7 @@ class TimelineFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
     private lateinit var search_layout: SearchView
     private lateinit var adapter: DataAdapter
     private lateinit var switchButton : Switch
+    private lateinit var latestNewest : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,13 +52,16 @@ class TimelineFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
             adapter.notifyDataSetChanged()
         }
         switchButton = view.findViewById(R.id.switch1)
+        latestNewest = view.findViewById(R.id.latest_oldest)
 
         switchButton.setOnClickListener {
             if (switch1.isChecked){
                 adapter.sortDescending()
+                latestNewest.text = getString(R.string.newest)
             }
             else{
                 adapter.sortAscending()
+                latestNewest.text=getString(R.string.latest)
             }
         }
         return view
@@ -80,6 +86,7 @@ class TimelineFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
         super.onViewCreated(view, savedInstanceState)
 
         my_toolbar.title = "Timeline"
+        ProductDataStorage.loginUser.username = ProductDataStorage.username
         my_toolbar.setOnMenuItemClickListener {
                 menuItem ->
             menuItem.isChecked = true

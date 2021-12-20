@@ -34,6 +34,12 @@ interface MarketApi {
         @Part("price_type") price_type : String
     ) : ProductAddResponse
 
+    @POST(Constants.PRODUCT_UPDATE)
+    suspend fun updateProduct(@Header("token") token: String,
+                              @Query("product_id") product_id : String,
+                              @Body request: ProductUpdateRequest
+    ): ProductUpdateResponse
+
     @GET(Constants.GET_ORDER_URL)
     suspend fun getOrders(@Header("token") token: String, @Header("limit") limit: String): OrderResponse
 

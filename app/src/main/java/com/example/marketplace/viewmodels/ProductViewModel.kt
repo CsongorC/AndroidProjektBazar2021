@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marketplace.MyApplication
 import com.example.marketplace.model.Image
+import com.example.marketplace.model.OrderUpdateRequest
 import com.example.marketplace.model.Product
+import com.example.marketplace.model.ProductUpdateRequest
 import com.example.marketplace.repository.Repository
 import kotlinx.coroutines.launch
 import retrofit2.http.Header
@@ -40,6 +42,20 @@ class ProductViewModel(private val repository: Repository) : ViewModel() {
             Log.d("xxx", "ProductViewModel - #add:  ${code}")
         }catch(e: Exception){
             Log.d("xxx", "ProductViewModel - #add: ${e.toString()}")
+        }
+    }
+
+    fun updateProduct(product_id : String, title : String, price : String, description :String) {
+        viewModelScope.launch {
+            val request =
+                ProductUpdateRequest(price.replace("\"", "").toLong(), description, title)
+            try {
+                val result =
+                    repository.updateProduct(MyApplication.token, product_id, request)
+                Log.d("xxx", "ProductViewModel - successful update")
+            }catch(e: Exception){
+                Log.d("xxx", "ProductViewModel update exception: ${e.toString()}")
+            }
         }
     }
 }

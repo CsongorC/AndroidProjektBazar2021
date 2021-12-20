@@ -11,7 +11,7 @@ class Repository {
     }
 
     suspend fun getProducts(token: String): ProductResponse {
-        return RetrofitInstance.api.getProducts(token,"100")
+        return RetrofitInstance.api.getProducts(token,"300")
     }
 
     suspend fun register(request: RegisterRequest): RegisterResponse {
@@ -38,8 +38,12 @@ class Repository {
         return RetrofitInstance.api.addProduct(token, title , description, price_per_unit, units, is_active, rating, amount_type, price_type)
     }
 
+    suspend fun updateProduct(token: String, product_id: String, updateProductRequest : ProductUpdateRequest): ProductUpdateResponse{
+        return RetrofitInstance.api.updateProduct(token, product_id, updateProductRequest)
+    }
+
     suspend fun getOrders(token: String): OrderResponse {
-        return RetrofitInstance.api.getOrders(token,"100")
+        return RetrofitInstance.api.getOrders(token,"200")
     }
 
     suspend fun addOrder(  token: String,

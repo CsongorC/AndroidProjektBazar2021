@@ -32,6 +32,7 @@ class DetailByOwnerFragment : Fragment() {
     private lateinit var priceText: TextView
     private lateinit var goBack: ImageView
     private lateinit var deleteItem: ImageView
+    private lateinit var editItem: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +83,11 @@ class DetailByOwnerFragment : Fragment() {
         goBack = view.findViewById(R.id.back)
         goBack.setOnClickListener {
             findNavController().navigate(R.id.action_detailByOwnerFragment_to_myMarketFragment)
+        }
+
+        editItem = view.findViewById(R.id.edit_item)
+        editItem.setOnClickListener {
+            findNavController().navigate(R.id.action_detailByOwnerFragment_to_editItemFragment)
         }
     }
 

@@ -130,6 +130,20 @@
             app:srcCompat="@drawable/ic_item" />
 
         <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginStart="120dp"
+            android:textSize="12dp"
+            android:text="Accepted"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/textView_buyer_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

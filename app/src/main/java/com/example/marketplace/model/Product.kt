@@ -72,6 +72,18 @@ data class OrderAddResponse(
 )
 
 @JsonClass(generateAdapter = true)
+data class ProductUpdateRequest (
+    var price_per_unit: Long,
+    var description: String,
+    var title: String
+)
+
+@JsonClass(generateAdapter = true)
+data class ProductUpdateResponse(
+    var updated_item: Product
+)
+
+@JsonClass(generateAdapter = true)
 data class OrderRemoveResponse(
     var message: String,
     var order_id: String,

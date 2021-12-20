@@ -142,7 +142,7 @@
             android:id="@+id/contact_details_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="410dp"
             android:layout_marginStart="50dp"
             android:text="Contact details"
             android:textColor="@color/light_peach"
@@ -153,56 +153,92 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/username_add"
+        <TextView
+            android:id="@+id/contact_details_add_username_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="440dp"
-            android:layout_marginStart="70dp"
-            android:ems="10"
-            android:hint="Username"
-            android:textColor="@color/deep_pine_green"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/deep_pine_green"
-            android:background="@drawable/edit_text_style_add_item"
+            android:layout_marginTop="460dp"
+            android:layout_marginStart="50dp"
+            android:text="Username:"
+            android:textColor="@color/light_peach"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.27"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_login_fragment" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/email_add"
+        <TextView
+            android:id="@+id/contact_details_add_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="490dp"
-            android:layout_marginStart="70dp"
-            android:ems="10"
-            android:hint="Email"
-            android:textColor="@color/deep_pine_green"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/deep_pine_green"
-            android:background="@drawable/edit_text_style_add_item"
+            android:layout_marginTop="460dp"
+            android:layout_marginStart="150dp"
+            android:text="loading..."
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.27"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_login_fragment" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/phone_number_add"
+        <TextView
+            android:id="@+id/contact_details_add_email_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:layout_marginStart="50dp"
+            android:text="Email:"
+            android:textColor="@color/light_peach"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/contact_details_add_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:layout_marginStart="110dp"
+            android:text="loading..."
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/contact_details_add_phone_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="540dp"
-            android:layout_marginStart="70dp"
-            android:ems="10"
-            android:hint="Phone number"
-            android:textColor="@color/deep_pine_green"
-            android:inputType="textPhonetic"
-            android:textColorHint="@color/deep_pine_green"
-            android:background="@drawable/edit_text_style_add_item"
+            android:layout_marginStart="50dp"
+            android:text="Phone number:"
+            android:textColor="@color/light_peach"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.27"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_login_fragment" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/contact_details_add_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="540dp"
+            android:layout_marginStart="180dp"
+            android:text="loading..."
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/launch_fare"
