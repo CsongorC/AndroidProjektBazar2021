@@ -57,11 +57,11 @@ class TimelineFragment : Fragment() , DataAdapter.OnItemClickListener, DataAdapt
         switchButton.setOnClickListener {
             if (switch1.isChecked){
                 adapter.sortDescending()
-                latestNewest.text = getString(R.string.newest)
+                latestNewest.text=getString(R.string.latest)
             }
             else{
                 adapter.sortAscending()
-                latestNewest.text=getString(R.string.latest)
+                latestNewest.text=getString(R.string.oldest)
             }
         }
         return view

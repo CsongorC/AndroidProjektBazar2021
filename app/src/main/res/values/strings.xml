@@ -23,7 +23,7 @@
     <string name="price">Price:</string>
     <string name="amount">Amount:</string>
     <string name="latest">Latest</string>
-    <string name="newest">Newest</string>
+    <string name="oldest">Oldest</string>
     <string-array name="amount_types">
         <item>KG</item>
         <item>G</item>

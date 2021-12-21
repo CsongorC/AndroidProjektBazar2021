@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_listFragment_to_guestProfileFragment"
             app:destination="@id/guestProfileFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_addOrderFragment"
+            app:destination="@id/addOrderFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -126,6 +129,9 @@
         <action
             android:id="@+id/action_addOrderFragment_to_detailByCustomerFragment"
             app:destination="@id/detailByCustomerFragment" />
+        <action
+            android:id="@+id/action_addOrderFragment_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
     <fragment
         android:id="@+id/myFaresOrdersFragment"

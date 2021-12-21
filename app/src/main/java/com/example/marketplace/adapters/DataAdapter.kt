@@ -5,10 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +16,7 @@ import com.example.marketplace.fragments.MyFaresFragment
 import com.example.marketplace.model.Product
 import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.launch
 
 class DataAdapter(
@@ -46,6 +44,7 @@ class DataAdapter(
         val textView_price: TextView = itemView.findViewById(R.id.textView_price_item_layout)
         val textView_seller: TextView = itemView.findViewById(R.id.textView_seller_item_layout)
         val imageView: ImageView = itemView.findViewById(R.id.imageView_item_layout)
+        val buyNow: FloatingActionButton = itemView.findViewById(R.id.fab)
 
         init {
             itemView.setOnClickListener(this)
@@ -99,6 +98,10 @@ class DataAdapter(
         holder.imageView.setOnClickListener {
             view -> view.findNavController().navigate(R.id.action_listFragment_to_guestProfileFragment)
             ProductDataStorage.loginUser.username = currentItem.username
+        }
+        holder.buyNow.setOnClickListener {
+            view -> view.findNavController().navigate(R.id.action_listFragment_to_addOrderFragment)
+            ProductDataStorage.productDetail = currentItem
         }
     }
 

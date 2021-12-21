@@ -6,6 +6,13 @@
     android:background="?attr/colorPrimary">
 
     <ImageView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="left"
+        android:src="@drawable/ic_baseline_arrow_back_24" />
+
+    <ImageView
         android:id="@+id/back_order"
         android:layout_width="40dp"
         android:layout_height="40dp"

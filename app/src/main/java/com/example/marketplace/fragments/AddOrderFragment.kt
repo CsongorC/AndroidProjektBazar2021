@@ -24,6 +24,7 @@ class AddOrderFragment : Fragment() {
 
     private lateinit var orderViewModel: OrderViewModel
     private lateinit var goBack: ImageView
+    private lateinit var exitThis: ImageView
     private lateinit var cancel : Button
     private lateinit var sendOrder : Button
     private lateinit var title: TextView
@@ -66,6 +67,11 @@ class AddOrderFragment : Fragment() {
 
         goBack = view.findViewById(R.id.back_order)
         goBack.setOnClickListener {
+            findNavController().navigate(R.id.listFragment)
+        }
+
+        exitThis = view.findViewById(R.id.back)
+        exitThis.setOnClickListener {
             findNavController().navigate(R.id.detailByCustomerFragment)
         }
 
@@ -106,13 +112,13 @@ class AddOrderFragment : Fragment() {
     }
 
     private fun loadDetails(){
-        seller.text = ProductDataStorage.productDetail.username
+        seller.text = ProductDataStorage.productDetail.username.replace("\"", "")
         val creationTimeLong = ProductDataStorage.productDetail.creation_time
         val creationTime = Timestamp(creationTimeLong)
         time.text = creationTime.toString().subSequence(0,10)
-        title.text = ProductDataStorage.productDetail.title
+        title.text = ProductDataStorage.productDetail.title.replace("\"", "")
         val priceText : String = ProductDataStorage.productDetail.price_per_unit.plus(" ").plus(ProductDataStorage.productDetail.price_type).plus("/").plus(ProductDataStorage.productDetail.amount_type)
-        price.text = priceText
+        price.text = priceText.replace("\"", "")
 
     }
 
