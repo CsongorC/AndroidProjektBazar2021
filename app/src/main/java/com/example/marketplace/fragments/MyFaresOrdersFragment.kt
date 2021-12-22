@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -27,6 +29,7 @@ class MyFaresOrdersFragment : Fragment(),  OrderAdapter.OnItemClickListener, Ord
     private lateinit var recycler_view: RecyclerView
     private lateinit var search_layout: SearchView
     private lateinit var orderAdapter: OrderAdapter
+    private lateinit var profile: ActionMenuItemView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +55,11 @@ class MyFaresOrdersFragment : Fragment(),  OrderAdapter.OnItemClickListener, Ord
         ongoing_sales = view.findViewById(R.id.textview_ongoing_sales)
         ongoing_sales.setOnClickListener{
             findNavController().navigate(R.id.myFaresFragment)
+        }
+
+        profile = view.findViewById(R.id.profile)
+        profile.setOnClickListener {
+            findNavController().navigate(R.id.profileFragment2)
         }
 
         return view

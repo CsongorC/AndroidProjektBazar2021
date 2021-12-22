@@ -109,15 +109,15 @@ class OrderSellDetailFragment : Fragment() {
     }
 
     private fun loadDetails(){
-        description.text = ProductDataStorage.orderDetail.description.replace("\"", "")
+        description.text = ProductDataStorage.orderDetail.description.replace("\"", "").replace("\\", "")
         buyer.text = ProductDataStorage.orderDetail.username.replace("\"", "")
         val creationTimeLong = ProductDataStorage.orderDetail.creation_time
         val creationTime = Timestamp(creationTimeLong)
         time.text = creationTime.toString().subSequence(0,10)
         title.text = ProductDataStorage.orderDetail.title.replace("\"", "")
-        price.text = ProductDataStorage.orderDetail.price_per_unit.replace("\"", "")
-        status.text = ProductDataStorage.orderDetail.status
-        amount.text = ProductDataStorage.orderDetail.units
+        price.text = ProductDataStorage.orderDetail.price_per_unit.replace("\"", "").replace("\\", "")
+        status.text = ProductDataStorage.orderDetail.status.replace("\"", "")
+        amount.text = ProductDataStorage.orderDetail.units.replace("\"", "").replace("\\", "")
         if(ProductDataStorage.orderDetail.status == "DECLINED" || ProductDataStorage.orderDetail.status == "ACCEPTED"){
             accept.visibility = View.GONE
             decline.visibility = View.GONE

@@ -26,7 +26,7 @@ class ListViewModel(private val repository: Repository) : ViewModel() {
                 products.value = result.products
                 Log.d("xxx", "ListViewModel - #products:  ${result.item_count}")
             }catch(e: Exception){
-                Log.d("xxx", "ListViewMofdel exception: ${e.toString()}")
+                Log.d("xxx", "ListViewModel exception: ${e.toString()}")
             }
         }
     }

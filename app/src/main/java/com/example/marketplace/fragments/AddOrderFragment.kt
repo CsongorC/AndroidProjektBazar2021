@@ -1,6 +1,7 @@
 package com.example.marketplace.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -88,12 +89,12 @@ class AddOrderFragment : Fragment() {
                 lifecycleScope.launch {
                     orderViewModel.addOrder(
                         title.text.toString(),
-                        ProductDataStorage.productDetail.description,
-                        ProductDataStorage.productDetail.price_per_unit,
-                        ProductDataStorage.productDetail.units,
-                        ProductDataStorage.productDetail.is_active.toString(),
-                        ProductDataStorage.productDetail.username,
-                        comment.text.toString()
+                        ProductDataStorage.productDetail.description.replace("\"", ""),
+                        ProductDataStorage.productDetail.price_per_unit.replace("\"", ""),
+                        amount.text.toString().replace("\"", ""),
+                        ProductDataStorage.productDetail.is_active.toString().replace("\"", ""),
+                        ProductDataStorage.productDetail.username.replace("\"", ""),
+                        comment.text.toString().replace("\"", "")
                     )
                 }
                 findNavController().navigate(R.id.listFragment)
@@ -112,6 +113,9 @@ class AddOrderFragment : Fragment() {
     }
 
     private fun loadDetails(){
+        Log.d("xxx", "description:  ${ProductDataStorage.productDetail.description.replace("\"", "")}")
+        Log.d("xxx", "price_per_unit:  ${ProductDataStorage.productDetail.price_per_unit.replace("\"", "")}")
+        Log.d("xxx", "units:  ${ProductDataStorage.productDetail.units.replace("\"", "")}")
         seller.text = ProductDataStorage.productDetail.username.replace("\"", "")
         val creationTimeLong = ProductDataStorage.productDetail.creation_time
         val creationTime = Timestamp(creationTimeLong)

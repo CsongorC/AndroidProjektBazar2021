@@ -63,4 +63,7 @@ interface MarketApi {
                             @Query("order_id") order_id : String,
                             @Body request: OrderUpdateRequest
                             ): OrderUpdateResponse
+
+    @POST(Constants.FORGOT_PASSWORD_URL)
+    suspend fun forgotPassword(@Body request: ForgotPasswordRequest): ForgotPasswordResponse
 }

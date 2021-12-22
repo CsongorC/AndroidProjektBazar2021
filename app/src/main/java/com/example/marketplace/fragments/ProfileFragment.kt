@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -23,9 +24,9 @@ class ProfileFragment : Fragment() {
 
     private lateinit var userViewModel: UserViewModel
     private lateinit var goBack: ImageView
-    private lateinit var username : EditText
-    private lateinit var email : EditText
-    private lateinit var phone : EditText
+    private lateinit var username : TextView
+    private lateinit var email : TextView
+    private lateinit var phone : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,9 +78,9 @@ class ProfileFragment : Fragment() {
                 }
                 withContext(Dispatchers.Main) {
                     Log.d("xxx", "loadDetails(): --------------------------------------------------------------")
-                    username.hint = ProductDataStorage.loginUser.username
-                    email.hint = ProductDataStorage.loginUser.email
-                    phone.hint = ProductDataStorage.loginUser.phone_number
+                    username.text = ProductDataStorage.loginUser.username
+                    email.text = ProductDataStorage.loginUser.email
+                    phone.text = ProductDataStorage.loginUser.phone_number
                 }
             }.invoke()
         }

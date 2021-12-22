@@ -1,11 +1,14 @@
 package com.example.marketplace.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
@@ -18,6 +21,7 @@ import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.ProductDataStorage
 import com.example.marketplace.viewmodels.UserViewModel
 import com.example.marketplace.viewmodels.UserViewModelFactory
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
 
 
@@ -29,6 +33,7 @@ class GuestProfileFragment : Fragment() {
     private lateinit var phoneNumber: TextView
     private lateinit var fullname: TextView
     private lateinit var goBack: ImageView
+    private lateinit var sendEmail: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +67,23 @@ class GuestProfileFragment : Fragment() {
         goBack = view.findViewById(R.id.back)
         goBack.setOnClickListener {
             findNavController().navigate(R.id.action_guestProfileFragment_to_listFragment)
+        }
+
+        sendEmail = view.findViewById(R.id.send_email)
+        sendEmail.setOnClickListener {
+            val intent: Intent = Intent(Intent.ACTION_SENDTO)
+            intent.data = Uri.parse("mailto:")
+            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(ProductDataStorage.loginUser.email))
+            intent.putExtra(
+                Intent.EXTRA_SUBJECT,
+                "Marketplace")
+            try {
+                startActivity(Intent.createChooser(intent, "Send email"))
+            } catch (e: Exception) {
+                Snackbar.make(view,
+                    "No email app found",
+                    Snackbar.LENGTH_SHORT).show()
+            }
         }
     }
 

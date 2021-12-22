@@ -58,11 +58,7 @@ class OrderAdapter(
 
         override fun onLongClick(p0: View?): Boolean {
             val currentPosition = this.adapterPosition
-            listener2.onItemLongClick(currentPosition)
-            if (p0 != null) {
-                ProductDataStorage.orderDetail = listFiltered[currentPosition]
-                p0.findNavController().navigate(R.id.action_listFragment_to_detailByCustomerFragment)
-            }
+            listener.onItemClick(currentPosition)
             return true
         }
     }
@@ -80,8 +76,8 @@ class OrderAdapter(
         val currentItem = listFiltered[position]
         holder.textView_title.text = currentItem.title.replace("\"", "")
         holder.textView_buyer.text = currentItem.username.replace("\"", "")
-        holder.textView_price.text = currentItem.price_per_unit.replace("\"", "")
-        holder.textView_amount.text = currentItem.units.replace("\"", "")
+        holder.textView_price.text = currentItem.price_per_unit.replace("\"", "").replace("\\", "")
+        holder.textView_amount.text = currentItem.units.replace("\"", "").replace("\\", "")
         holder.textView_status.text = currentItem.status.replace("\"", "")
         if(currentItem.status != "ACCEPTED"){
             holder.ok.visibility = View.GONE

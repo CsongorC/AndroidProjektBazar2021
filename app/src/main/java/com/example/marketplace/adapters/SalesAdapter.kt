@@ -50,7 +50,11 @@ class SalesAdapter(
 
         override fun onClick(p0: View?) {
             val currentPosition = this.adapterPosition
-            listener.onItemClick(currentPosition)
+            listener2.onItemLongClick(currentPosition)
+            if (p0 != null) {
+                ProductDataStorage.orderDetail = listFiltered[currentPosition]
+                p0.findNavController().navigate(R.id.action_myFaresFragment_to_orderSellDetailFragment)
+            }
             return
         }
 
@@ -78,8 +82,8 @@ class SalesAdapter(
         val currentItem = listFiltered[position]
         holder.textView_title.text = currentItem.title.replace("\"", "")
         holder.textView_buyer.text = currentItem.username.replace("\"", "")
-        holder.textView_price.text = currentItem.price_per_unit.replace("\"", "")
-        holder.textView_amount.text = currentItem.units.replace("\"", "")
+        holder.textView_price.text = currentItem.price_per_unit.replace("\"", "").replace("\\", "")
+        holder.textView_amount.text = currentItem.units.replace("\"", "").replace("\\", "")
         holder.textView_status.text = currentItem.status.replace("\"","")
         val creationTimeLong = currentItem.creation_time
         val creationTime = Timestamp(creationTimeLong)
@@ -90,7 +94,7 @@ class SalesAdapter(
 
     // Update the list
     fun setData(newlist: ArrayList<Order>) {
-        list = newlist.filter{ s -> s.owner_username == ProductDataStorage.username} as ArrayList<Order>
+        list = newlist.filter{ s -> s.owner_username == ProductDataStorage.username || s.owner_username == "\"".plus(ProductDataStorage.username).plus("\"")} as ArrayList<Order>
         listFiltered = list
         notifyDataSetChanged()
     }

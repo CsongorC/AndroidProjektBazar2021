@@ -111,16 +111,14 @@
             android:layout_marginTop="460dp"
             android:textSize="20sp" />
 
-
-
         <Button
-            android:id="@+id/publish"
+            android:id="@+id/send_email"
             android:layout_width="192dp"
             android:layout_height="40dp"
             android:layout_marginTop="515dp"
             android:layout_marginStart="55dp"
             android:backgroundTint="@color/orange"
-            android:text="Send a chat message"
+            android:text="Send email"
             android:textSize="10dp"
             android:textColorHint="@color/light_peach"
             app:layout_constraintEnd_toEndOf="parent"
