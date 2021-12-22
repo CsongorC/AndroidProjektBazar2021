@@ -2,8 +2,8 @@ package com.example.marketplace.repository
 
 import com.example.marketplace.api.RetrofitInstance
 import com.example.marketplace.model.*
-import com.example.marketplace.viewmodels.ProductDataStorage
-import retrofit2.http.Part
+import okhttp3.MediaType
+import okhttp3.RequestBody
 
 class Repository {
     suspend fun login(request: LoginRequest): LoginResponse {
@@ -39,7 +39,16 @@ class Repository {
                            rating : Double,
                            amount_type : String,
                            price_type : String): ProductAddResponse{
-        return RetrofitInstance.api.addProduct(token, title , description, price_per_unit, units, is_active, rating, amount_type, price_type)
+        return RetrofitInstance.api.addProduct(
+            token,
+            formatData(title),
+            formatData(description),
+            formatData(price_per_unit),
+            formatData(units),
+            formatData(is_active.toString()),
+            formatData(rating.toString()),
+            formatData(amount_type),
+            formatData(price_type))
     }
 
     suspend fun updateProduct(token: String, product_id: String, updateProductRequest : ProductUpdateRequest): ProductUpdateResponse{
@@ -58,7 +67,15 @@ class Repository {
                            status : String,
                            owner_username : String,
                            messages : String): OrderAddResponse{
-        return RetrofitInstance.api.addOrder(token, title , description, price_per_unit, units, status, owner_username, messages)
+        return RetrofitInstance.api.addOrder(
+            token,
+            formatData(title),
+            formatData(description),
+            formatData(price_per_unit),
+            formatData(units),
+            formatData(status),
+            formatData(owner_username),
+            formatData(messages))
     }
 
     suspend fun removeOrder(  token: String, order_id: String): OrderRemoveResponse{
@@ -67,5 +84,9 @@ class Repository {
 
     suspend fun updateOrder(token: String, order_id: String, updateOrderRequest : OrderUpdateRequest): OrderUpdateResponse{
         return RetrofitInstance.api.updateOrder(token, order_id, updateOrderRequest)
+    }
+
+    fun formatData(input: String): RequestBody {
+        return RequestBody.create(MediaType.parse("text/plain"), input)
     }
 }

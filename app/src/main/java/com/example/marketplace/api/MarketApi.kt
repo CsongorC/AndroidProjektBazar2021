@@ -2,6 +2,7 @@ package com.example.marketplace.api
 
 import com.example.marketplace.model.*
 import com.example.marketplace.utils.Constants
+import okhttp3.RequestBody
 import retrofit2.http.*
 
 interface MarketApi {
@@ -24,14 +25,14 @@ interface MarketApi {
     @POST(Constants.PRODUCT_ADD)
     suspend fun addProduct(
         @Header("token") token: String,
-        @Part("title") title : String,
-        @Part("description") description : String,
-        @Part("price_per_unit") price_per_unit : String,
-        @Part("units") units : String,
-        @Part("is_active") is_active : Boolean,
-        @Part("rating") rating : Double,
-        @Part("amount_type") amount_type : String,
-        @Part("price_type") price_type : String
+        @Part("title") title: RequestBody,
+        @Part("description") description: RequestBody,
+        @Part("price_per_unit") price_per_unit: RequestBody,
+        @Part("units") units: RequestBody,
+        @Part("is_active") is_active: RequestBody,
+        @Part("rating") rating: RequestBody,
+        @Part("amount_type") amount_type: RequestBody,
+        @Part("price_type") price_type: RequestBody
     ) : ProductAddResponse
 
     @POST(Constants.PRODUCT_UPDATE)
@@ -46,13 +47,13 @@ interface MarketApi {
     @Multipart
     @POST(Constants.ADD_ORDER_URL)
     suspend fun addOrder(@Header("token") token: String,
-                         @Part("title") title : String,
-                         @Part("description") description: String ,
-                         @Part("price_per_unit") price_per_unit : String,
-                         @Part("units") units : String,
-                         @Part("status") status : String,
-                         @Part("owner_username") owner_username : String,
-                         @Part("messages") messages : String): OrderAddResponse
+                         @Part("title") title : RequestBody,
+                         @Part("description") description: RequestBody ,
+                         @Part("price_per_unit") price_per_unit : RequestBody,
+                         @Part("units") units : RequestBody,
+                         @Part("status") status : RequestBody,
+                         @Part("owner_username") owner_username : RequestBody,
+                         @Part("messages") messages : RequestBody): OrderAddResponse
 
     @POST(Constants.REMOVE_ORDER_URL)
     suspend fun removeOrder(@Header("token") token: String,

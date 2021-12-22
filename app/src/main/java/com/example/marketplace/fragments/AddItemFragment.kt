@@ -18,6 +18,8 @@ import com.example.marketplace.repository.Repository
 import com.example.marketplace.viewmodels.*
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
+import okhttp3.MediaType
+import okhttp3.RequestBody
 
 class AddItemFragment : Fragment() {
 
