@@ -54,13 +54,21 @@ class OrderAdapter(
 
         override fun onClick(p0: View?) {
             val currentPosition = this.adapterPosition
-            listener.onItemClick(currentPosition)
+            listener2.onItemLongClick(currentPosition)
+            if (p0 != null) {
+                ProductDataStorage.orderDetail = listFiltered[currentPosition]
+                //p0.findNavController().navigate(R.id.action_myFaresFragment_to_orderSellDetailFragment)
+            }
             return
         }
 
         override fun onLongClick(p0: View?): Boolean {
             val currentPosition = this.adapterPosition
-            listener.onItemClick(currentPosition)
+            listener2.onItemLongClick(currentPosition)
+            if (p0 != null) {
+                ProductDataStorage.orderDetail = listFiltered[currentPosition]
+                p0.findNavController().navigate(R.id.action_myFaresOrdersFragment_to_orderBuyDetailFragment)
+            }
             return true
         }
     }

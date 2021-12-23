@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/deep_pine_green"
+    tools:context=".fragments.OrderBuyDetailFragment">
+
+    <include
+        layout="@layout/order_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="560dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/light_peach"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="169dp"
+            android:layout_height="207dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="250dp"
+            android:src="@drawable/ic_item" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Description"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="365dp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="1000dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="Title"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="235dp"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="1000"
+            android:layout_marginStart="85dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="290dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price_text"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="@string/price"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="290dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount_text"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="@string/amount"
+            android:layout_marginStart="25dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="330dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/amount_orderSell"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:text="5"
+            android:layout_marginStart="110dp"
+            android:textColor="@color/deep_pine_green"
+            android:layout_marginTop="330dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView_item_layout"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="190dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user"
+            />
+
+        <TextView
+            android:id="@+id/buyer"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Buyer"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="194dp"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/creationTime_orderSell"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Creation time"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="194dp"
+            android:textColor="@color/deep_pine_green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/status_orderSell"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OPEN"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="225dp"
+            android:textColor="@color/orange"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/remove_orderBuy"
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="490dp"
+            android:layout_marginStart="95dp"
+            android:backgroundTint="@color/deep_grey"
+            android:textSize="10dp"
+            android:text="Withdraw"
+            android:textColor="@color/light_peach"
+            android:textColorHint="@color/light_peach"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone_number"
+            app:cornerRadius="100dp"/>
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>
