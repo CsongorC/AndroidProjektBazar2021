@@ -42,6 +42,8 @@ class OrderAdapter(
         val textView_amount: TextView = itemView.findViewById(R.id.amount_text)
         val textView_status: TextView = itemView.findViewById(R.id.status)
         val ok: ImageView = itemView.findViewById(R.id.picture_status)
+        val no: ImageView = itemView.findViewById(R.id.picture_status_declined)
+        val open: ImageView = itemView.findViewById(R.id.picture_status_open)
         val time: TextView = itemView.findViewById(R.id.time_text)
         //val imageView: ImageView = itemView.findViewById(R.id.imageView_item_layout)
 
@@ -75,12 +77,18 @@ class OrderAdapter(
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         val currentItem = listFiltered[position]
         holder.textView_title.text = currentItem.title.replace("\"", "")
-        holder.textView_buyer.text = currentItem.username.replace("\"", "")
+        holder.textView_buyer.text = currentItem.owner_username.replace("\"", "")
         holder.textView_price.text = currentItem.price_per_unit.replace("\"", "").replace("\\", "")
         holder.textView_amount.text = currentItem.units.replace("\"", "").replace("\\", "")
         holder.textView_status.text = currentItem.status.replace("\"", "")
         if(currentItem.status != "ACCEPTED"){
             holder.ok.visibility = View.GONE
+        }
+        if(currentItem.status != "DECLINED"){
+            holder.no.visibility = View.GONE
+        }
+        if(currentItem.status != "OPEN"){
+            holder.open.visibility = View.GONE
         }
         val creationTimeLong = currentItem.creation_time
         val creationTime = Timestamp(creationTimeLong)
@@ -119,7 +127,7 @@ class OrderAdapter(
                     val filteredList = ArrayList<Order>()
                     list
                         .filter {
-                            (it.title.contains(constraint!!)) or (it.description.contains(constraint))
+                            (it.title.contains(constraint!!))
                         }
                         .forEach { filteredList.add(it) }
                     listFiltered = filteredList

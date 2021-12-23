@@ -5,10 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.TextView
+import android.widget.*
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marketplace.R
@@ -42,6 +39,9 @@ class SalesAdapter(
         val textView_amount: TextView = itemView.findViewById(R.id.amount_text)
         val textView_status: TextView = itemView.findViewById(R.id.status)
         val time: TextView = itemView.findViewById(R.id.time_text)
+        val ok: ImageView = itemView.findViewById(R.id.picture_status)
+        val no: ImageView = itemView.findViewById(R.id.picture_status_declined)
+        val open: ImageView = itemView.findViewById(R.id.picture_status_open)
 
         init {
             itemView.setOnClickListener(this)
@@ -88,6 +88,15 @@ class SalesAdapter(
         val creationTimeLong = currentItem.creation_time
         val creationTime = Timestamp(creationTimeLong)
         holder.time.text = creationTime.toString().subSequence(0,10)
+        if(currentItem.status != "ACCEPTED"){
+            holder.ok.visibility = View.GONE
+        }
+        if(currentItem.status != "DECLINED"){
+            holder.no.visibility = View.GONE
+        }
+        if(currentItem.status != "OPEN"){
+            holder.open.visibility = View.GONE
+        }
     }
 
     override fun getItemCount() = listFiltered.size
@@ -108,7 +117,7 @@ class SalesAdapter(
                     val filteredList = ArrayList<Order>()
                     list
                         .filter {
-                            (it.title.contains(constraint!!)) or (it.description.contains(constraint))
+                            (it.title.contains(constraint!!))
                         }
                         .forEach { filteredList.add(it) }
                     listFiltered = filteredList
